@@ -7,87 +7,89 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2//css/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2//css/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-  <link rel="stylesheet" href="https://revealjs.com/css/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2//css/theme/beige.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://unpkg.com/reveal.js@3.9.2//css/print/pdf.css' : 'https://unpkg.com/reveal.js@3.9.2//css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2//lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -98,13 +100,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="wundergraph-or-how-to-build-a-compile-time-graphql-orm-using-diesel" class="slide level2">
 <h2>Wundergraph or How to build a compile time GraphQL ORM using Diesel</h2>
 </section>
-<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section><section id="additional-information" class="slide level2">
+<section><section id="introduction" class="title-slide slide level1"><h1>Introduction</h1></section>
+<section id="additional-information" class="slide level2">
 <h2>Additional information</h2>
 <ul>
 <li>Workshop was part of the RustFest 2019 in Barcelona</li>
 <li>See speaker notes (Press <code>S</code>) for additional information</li>
 </ul>
-</section><section id="about-me" class="slide level2">
+</section>
+<section id="about-me" class="slide level2">
 <h2>About me</h2>
 <ul>
 <li>Writing rust since 2014</li>
@@ -117,7 +121,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>So if you have any feedback I would be happy</li>
 </ul>
 </aside>
-</section><section id="general-rules" class="slide level2">
+</section>
+<section id="general-rules" class="slide level2">
 <h2>General rules</h2>
 <ul>
 <li>Ask Questions</li>
@@ -126,7 +131,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <aside class="notes">
 
 </aside>
-</section><section id="outline" class="slide level2">
+</section>
+<section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ul>
 <li>Today:
@@ -144,22 +150,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 id="diesel-introduction">Diesel introduction</h3>
 <p>Talk about diesel in general</p>
 <p>after that a simple exercise building a simple CRUD like application</p>
-<h2 id="diesel-internals">Diesel internals</h2>
+<section id="diesel-internals" class="slide level2">
+<h2>Diesel internals</h2>
 <ul>
 <li>Talk about diesel internals, specifically how compile time validation is done</li>
 <li>Mention a few limitations of that approach</li>
 <li>A few words on how to extend diesel</li>
 </ul>
 <p>after that an exercise how to extend diesel by implementing a custom type and write some generic flexible code.</p>
-<h2 id="wundergraph-introduction">Wundergraph introduction</h2>
+</section>
+<section id="wundergraph-introduction" class="slide level2">
+<h2>Wundergraph introduction</h2>
 <p>What is wundergraph, how does a simple wundergraph usage look like (At that point: What is GraphQL?)</p>
 <p>after that an small exercise on how to build a simple GraphQL API using diesel, juniper and wundergraph</p>
-<h2 id="wundergraph-internals">Wundergraph internals</h2>
+</section>
+<section id="wundergraph-internals" class="slide level2">
+<h2>Wundergraph internals</h2>
 <p>Take a look at some internal wundergraph code. How does wundergraph generate all those things for you</p>
 <p>A final exercise on how to implement some advanced custom entity implementations.</p>
+</section>
 </aside>
 </section></section>
-<section><section id="diesel" class="title-slide slide level1"><h1>Diesel</h1></section><section id="what-is-diesel" class="slide level2">
+<section><section id="diesel" class="title-slide slide level1"><h1>Diesel</h1></section>
+<section id="what-is-diesel" class="slide level2">
 <h2>What is diesel</h2>
 <ul>
 <li>Diesel is a query builder with some ORM like features</li>
@@ -178,31 +191,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Talk about how the internals of how checking works later today</li>
 </ul>
 </aside>
-</section><section id="what-is-diesel-1" class="slide level2">
+</section>
+<section id="what-is-diesel-1" class="slide level2">
 <h2>What is diesel</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb1-1" title="1"><span class="pp">table!</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-2" title="2">    students <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-3" title="3">        id -&gt; Integer,</a>
-<a class="sourceLine" id="cb1-4" title="4">        name -&gt; Text,</a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="op">}</span></a>
-<a class="sourceLine" id="cb1-7" title="7"></a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="at">#[</span>derive<span class="at">(</span>Queryable<span class="at">)]</span></a>
-<a class="sourceLine" id="cb1-9" title="9"><span class="kw">struct</span> Student <span class="op">{</span></a>
-<a class="sourceLine" id="cb1-10" title="10">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb1-11" title="11">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb1-12" title="12"><span class="op">}</span></a>
-<a class="sourceLine" id="cb1-13" title="13"></a>
-<a class="sourceLine" id="cb1-14" title="14"><span class="kw">let</span> students: <span class="dt">Vec</span>&lt;Student&gt; =</a>
-<a class="sourceLine" id="cb1-15" title="15">    <span class="pp">students::</span>table</a>
-<a class="sourceLine" id="cb1-16" title="16">        .filter(<span class="pp">students::</span>id.eq(<span class="dv">42</span>))</a>
-<a class="sourceLine" id="cb1-17" title="17">        .<span class="pp">load::</span>&lt;Student&gt;(&amp;conn)?;</a>
-<a class="sourceLine" id="cb1-18" title="18"></a>
-<a class="sourceLine" id="cb1-19" title="19"><span class="pp">diesel::</span>insert_into(<span class="pp">students::</span>table)</a>
-<a class="sourceLine" id="cb1-20" title="20">    .values((</a>
-<a class="sourceLine" id="cb1-21" title="21">        <span class="pp">students::</span>id.eq(<span class="dv">43</span>),</a>
-<a class="sourceLine" id="cb1-22" title="22">        <span class="pp">students::</span>name.eq(<span class="st">&quot;weiznich&quot;</span>),</a>
-<a class="sourceLine" id="cb1-23" title="23">    )).execute(&amp;conn)?;</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">table!</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>    students <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>        id -&gt; Integer,</span>
+<span id="cb1-4"><a href="#cb1-4"></a>        name -&gt; Text,</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="op">}</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="op">}</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="at">#[</span>derive<span class="at">(</span>Queryable<span class="at">)]</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="kw">struct</span> Student <span class="op">{</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb1-11"><a href="#cb1-11"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="op">}</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="kw">let</span> students: <span class="dt">Vec</span>&lt;Student&gt; =</span>
+<span id="cb1-15"><a href="#cb1-15"></a>    <span class="pp">students::</span>table</span>
+<span id="cb1-16"><a href="#cb1-16"></a>        .filter(<span class="pp">students::</span>id.eq(<span class="dv">42</span>))</span>
+<span id="cb1-17"><a href="#cb1-17"></a>        .<span class="pp">load::</span>&lt;Student&gt;(&amp;conn)?;</span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="pp">diesel::</span>insert_into(<span class="pp">students::</span>table)</span>
+<span id="cb1-20"><a href="#cb1-20"></a>    .values((</span>
+<span id="cb1-21"><a href="#cb1-21"></a>        <span class="pp">students::</span>id.eq(<span class="dv">43</span>),</span>
+<span id="cb1-22"><a href="#cb1-22"></a>        <span class="pp">students::</span>name.eq(<span class="st">&quot;weiznich&quot;</span>),</span>
+<span id="cb1-23"><a href="#cb1-23"></a>    )).execute(&amp;conn)?;</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Separates schema definition and “model”</li>
@@ -211,7 +225,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Talk about each of those steps later</li>
 </ul>
 </aside>
-</section><section id="diesel-features" class="slide level2">
+</section>
+<section id="diesel-features" class="slide level2">
 <h2>Diesel features</h2>
 <p>General design assumptions for diesel:</p>
 <ul>
@@ -231,7 +246,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="creating-a-diesel-application" class="slide level2">
+</section>
+<section id="creating-a-diesel-application" class="slide level2">
 <h2>Creating a diesel application</h2>
 <ol start="0" type="1">
 <li>Install <code>diesel_cli</code> (A tool to manage migrations/your schema)</li>
@@ -246,7 +262,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the next few slides to cover each of those steps in more details</li>
 </ul>
 </aside>
-</section><section id="diesel-cli" class="slide level2">
+</section>
+<section id="diesel-cli" class="slide level2">
 <h2>Diesel CLI</h2>
 <ul>
 <li>Small helper cli tool for Diesel</li>
@@ -264,14 +281,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Technical note: Depending on the enabled features native database libraries are required. Backends controlled by cargos feature flags, by default postgresql, sqlite and mysql</li>
 </ul>
 </aside>
-</section><section id="the-table-marco" class="slide level2">
+</section>
+<section id="the-table-marco" class="slide level2">
 <h2>The <code>table!</code> marco</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb2-1" title="1"><span class="pp">table!</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-2" title="2">    students(id) <span class="op">{</span></a>
-<a class="sourceLine" id="cb2-3" title="3">        id -&gt; Integer,</a>
-<a class="sourceLine" id="cb2-4" title="4">        name -&gt; Text,</a>
-<a class="sourceLine" id="cb2-5" title="5">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb2-1"><a href="#cb2-1"></a><span class="pp">table!</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>    students(id) <span class="op">{</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>        id -&gt; Integer,</span>
+<span id="cb2-4"><a href="#cb2-4"></a>        name -&gt; Text,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="op">}</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Defines a database schema on rust side</li>
 <li>Generates a bunch of helper types used to construct queries</li>
@@ -290,7 +308,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="select-statements" class="slide level2">
+</section>
+<section id="select-statements" class="slide level2">
 <h2>Select statements</h2>
 <ul>
 <li>Diesel provides a query DSL to construct statically known queries</li>
@@ -299,35 +318,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="fragment">
 <p>Basic structure of a query:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb3-1" title="1"><span class="pp">a_table::</span>table</a>
-<a class="sourceLine" id="cb3-2" title="2">    .select(fields_to_select)</a>
-<a class="sourceLine" id="cb3-3" title="3">    .filter(some_filter_expression)</a>
-<a class="sourceLine" id="cb3-4" title="4">    .order_by(some_order_expression)</a>
-<a class="sourceLine" id="cb3-5" title="5">    .limit(limit_as_i64)</a>
-<a class="sourceLine" id="cb3-6" title="6">    .offset(offset_as_i64)</a>
-<a class="sourceLine" id="cb3-7" title="7">    .<span class="pp">load::</span>&lt;SomeStructOrTuple&gt;(&amp;conn);</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb3-1"><a href="#cb3-1"></a><span class="pp">a_table::</span>table</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    .select(fields_to_select)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    .filter(some_filter_expression)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    .order_by(some_order_expression)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    .limit(limit_as_i64)</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    .offset(offset_as_i64)</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    .<span class="pp">load::</span>&lt;SomeStructOrTuple&gt;(&amp;conn);</span></code></pre></div>
 <aside class="notes">
 <ul>
-<li>We will talk about the simple cases first</li>
-<li>Means: We have a statically known select statement</li>
-<li>For the general case: To many possibilities, so we just cover some examples and give a guideline how to find things in our docs</li>
-<li>General advice for finding things in our docs: Search for the SQL expression you want to write</li>
-<li>Notably exception: <code>IN</code> which is generated by <code>.eq_any</code> instead (because keyword)</li>
-<li>Each clause is optional, if not given some default is assumed (Same as in SQL)</li>
-<li>We will talk about each part in the next few slides, while mentioning a few common errors</li>
+<li><p>We will talk about the simple cases first</p></li>
+<li><p>Means: We have a statically known select statement</p></li>
+<li><p>For the general case: To many possibilities, so we just cover some examples and give a guideline how to find things in our docs</p></li>
+<li><p>General advice for finding things in our docs: Search for the SQL expression you want to write</p></li>
+<li><p>Notably exception: <code>IN</code> which is generated by <code>.eq_any</code> instead (because keyword)</p></li>
+<li><p>Each clause is optional, if not given some default is assumed (Same as in SQL)</p></li>
+<li><p>We will talk about each part in the next few slides, while mentioning a few common errors</p></li>
 <li><p>order of the methods does not matter</p></li>
-<li>Talk about select, filter and order in the next few slides</li>
-<li><code>limit</code>/<code>offset</code> just takes a <code>i64</code> number</li>
+<li><p>Talk about select, filter and order in the next few slides</p></li>
+<li><p><code>limit</code>/<code>offset</code> just takes a <code>i64</code> number</p></li>
 </ul>
 </aside>
 </div>
-</section><section id="select-statements-select-clause" class="slide level2">
+</section>
+<section id="select-statements-select-clause" class="slide level2">
 <h2>Select statements (Select clause)</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb4-1" title="1"><span class="pp">a_table::</span>table.select((</a>
-<a class="sourceLine" id="cb4-2" title="2">    <span class="pp">a_table::</span>column_a, <span class="co">// just select a column</span></a>
-<a class="sourceLine" id="cb4-3" title="3">    <span class="pp">a_table::</span>column_b + <span class="pp">a_table::</span>column_b, <span class="co">// an expression</span></a>
-<a class="sourceLine" id="cb4-4" title="4">    <span class="st">&quot;abc&quot;</span>.<span class="pp">into_sql::</span>&lt;Text&gt;() <span class="co">// or a constant</span></a>
-<a class="sourceLine" id="cb4-5" title="5">))</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">a_table::</span>table.select((</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="pp">a_table::</span>column_a, <span class="co">// just select a column</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="pp">a_table::</span>column_b + <span class="pp">a_table::</span>column_b, <span class="co">// an expression</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="st">&quot;abc&quot;</span>.<span class="pp">into_sql::</span>&lt;Text&gt;() <span class="co">// or a constant</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>))</span></code></pre></div>
 <ul>
 <li>Just a tuple of expressions that should appear in the select clause</li>
 <li>If not given just select the columns of the table in the order given by the <code>table!</code> macro</li>
@@ -337,12 +357,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Currently not supported: Mixing aggregate and none aggregate select expressions (<code>Max</code>/<code>Count</code>/<code>SUM</code>/… )</li>
 </ul>
 </aside>
-</section><section id="select-statements-where-clause" class="slide level2">
+</section>
+<section id="select-statements-where-clause" class="slide level2">
 <h2>Select statements (Where clause)</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb5-1" title="1"><span class="pp">a_table::</span>table</a>
-<a class="sourceLine" id="cb5-2" title="2">    .filter(<span class="pp">a_table::</span>column_a.eq(foo)</a>
-<a class="sourceLine" id="cb5-3" title="3">        .and(<span class="pp">a_table::</span>column_b.like(baz)))</a>
-<a class="sourceLine" id="cb5-4" title="4">    .or_filter(<span class="pp">a_table::</span>column_c.is_null())</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">a_table::</span>table</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    .filter(<span class="pp">a_table::</span>column_a.eq(foo)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>        .and(<span class="pp">a_table::</span>column_b.like(baz)))</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    .or_filter(<span class="pp">a_table::</span>column_c.is_null())</span></code></pre></div>
 <ul>
 <li>Constructs a where clause of the current SQL select statement</li>
 <li>If not given no where clause is generated</li>
@@ -352,12 +373,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <aside class="notes">
 
 </aside>
-</section><section id="select-statement-order-clause" class="slide level2">
+</section>
+<section id="select-statement-order-clause" class="slide level2">
 <h2>Select statement (Order clause)</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb6-1" title="1"><span class="pp">a_table::</span>table.order_by((</a>
-<a class="sourceLine" id="cb6-2" title="2">    <span class="pp">a_table::</span>column_a.asc(),</a>
-<a class="sourceLine" id="cb6-3" title="3">    <span class="pp">a_table::</span>column.desc()</a>
-<a class="sourceLine" id="cb6-4" title="4">))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb6-1"><a href="#cb6-1"></a><span class="pp">a_table::</span>table.order_by((</span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="pp">a_table::</span>column_a.asc(),</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="pp">a_table::</span>column.desc()</span>
+<span id="cb6-4"><a href="#cb6-4"></a>))</span></code></pre></div>
 <ul>
 <li>Creates a order clause</li>
 <li>Possibility to single order expression or multiple as tuple</li>
@@ -370,7 +392,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>(Use <code>then_order_by</code> to append to existing clause)</li>
 </ul>
 </aside>
-</section><section id="result-mapping-queryable" class="slide level2">
+</section>
+<section id="result-mapping-queryable" class="slide level2">
 <h2>Result mapping (<code>Queryable</code>)</h2>
 <ul>
 <li>A trait that indicates that a given rust type could be the result of a query with a SQL type</li>
@@ -391,7 +414,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Fields of multiple tables could appear in the same query</li>
 </ul>
 </aside>
-</section><section id="query-execution" class="slide level2">
+</section>
+<section id="query-execution" class="slide level2">
 <h2>Query execution</h2>
 <ul>
 <li>Different ways to execute a query:
@@ -407,13 +431,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Where <code>U</code> is a type that implements <code>Queryable</code></li>
 </ul>
 </aside>
-</section><section id="insert-statements" class="slide level2">
+</section>
+<section id="insert-statements" class="slide level2">
 <h2>Insert statements</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb7-1" title="1"><span class="pp">diesel::</span>insert_into(<span class="pp">a_table::</span>table)</a>
-<a class="sourceLine" id="cb7-2" title="2">    .values((</a>
-<a class="sourceLine" id="cb7-3" title="3">        <span class="pp">a_table::</span>column_a.eq(value),</a>
-<a class="sourceLine" id="cb7-4" title="4">        <span class="pp">a_table::</span>column_b.eq(other_value)</a>
-<a class="sourceLine" id="cb7-5" title="5">)).execute(&amp;conn);</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb7-1"><a href="#cb7-1"></a><span class="pp">diesel::</span>insert_into(<span class="pp">a_table::</span>table)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>    .values((</span>
+<span id="cb7-3"><a href="#cb7-3"></a>        <span class="pp">a_table::</span>column_a.eq(value),</span>
+<span id="cb7-4"><a href="#cb7-4"></a>        <span class="pp">a_table::</span>column_b.eq(other_value)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>)).execute(&amp;conn);</span></code></pre></div>
 <ul>
 <li>Creates a <code>INSERT INTO</code> statement.</li>
 </ul>
@@ -424,18 +449,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>possible to use a struct with named fields instead of a anonymous tuple</li>
 </ul>
 </aside>
-</section><section id="insert-statements-1" class="slide level2">
+</section>
+<section id="insert-statements-1" class="slide level2">
 <h2>Insert statements</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb8-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>Insertable<span class="at">)]</span></a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb8-3" title="3"><span class="kw">struct</span> NewStudent <span class="op">{</span></a>
-<a class="sourceLine" id="cb8-4" title="4">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb8-5" title="5">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb8-6" title="6"><span class="op">}</span></a>
-<a class="sourceLine" id="cb8-7" title="7"></a>
-<a class="sourceLine" id="cb8-8" title="8"><span class="pp">diesel::</span>insert_into(<span class="pp">students::</span>table)</a>
-<a class="sourceLine" id="cb8-9" title="9">    .values(&amp;<span class="op">[</span>new_student_1, new_student_2<span class="op">]</span>)</a>
-<a class="sourceLine" id="cb8-10" title="10">    .execute(&amp;conn);</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb8-1"><a href="#cb8-1"></a><span class="at">#[</span>derive<span class="at">(</span>Insertable<span class="at">)]</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="kw">struct</span> NewStudent <span class="op">{</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="op">}</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="pp">diesel::</span>insert_into(<span class="pp">students::</span>table)</span>
+<span id="cb8-9"><a href="#cb8-9"></a>    .values(&amp;<span class="op">[</span>new_student_1, new_student_2<span class="op">]</span>)</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    .execute(&amp;conn);</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Possibility to use a struct to structure the insert data</li>
@@ -445,13 +471,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Additional methods for <code>upsert</code>, <code>returing</code> clauses, <code>replace_into</code> and inserts from select statements are provided. See the documentation of <code>diesel::insert_into</code> and <code>InsertStatement</code> for details</li>
 </ul>
 </aside>
-</section><section id="update-statements" class="slide level2">
+</section>
+<section id="update-statements" class="slide level2">
 <h2>Update statements</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb9-1" title="1"><span class="pp">diesel::</span>update(<span class="pp">a_table::</span>table.filter(<span class="pp">a_table::</span>id.eq(<span class="dv">1</span>)))</a>
-<a class="sourceLine" id="cb9-2" title="2">    .set((</a>
-<a class="sourceLine" id="cb9-3" title="3">        <span class="pp">a_table::</span>column_a.eq(some_value),</a>
-<a class="sourceLine" id="cb9-4" title="4">        <span class="pp">a_table::</span>column_b.eq(<span class="pp">a_table::</span>column_b + <span class="dv">5</span>.<span class="pp">into_sql::</span>&lt;Integer&gt;())</a>
-<a class="sourceLine" id="cb9-5" title="5">    )).execute(&amp;conn);</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb9-1"><a href="#cb9-1"></a><span class="pp">diesel::</span>update(<span class="pp">a_table::</span>table.filter(<span class="pp">a_table::</span>id.eq(<span class="dv">1</span>)))</span>
+<span id="cb9-2"><a href="#cb9-2"></a>    .set((</span>
+<span id="cb9-3"><a href="#cb9-3"></a>        <span class="pp">a_table::</span>column_a.eq(some_value),</span>
+<span id="cb9-4"><a href="#cb9-4"></a>        <span class="pp">a_table::</span>column_b.eq(<span class="pp">a_table::</span>column_b + <span class="dv">5</span>.<span class="pp">into_sql::</span>&lt;Integer&gt;())</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    )).execute(&amp;conn);</span></code></pre></div>
 <ul>
 <li>Creates a <code>UPDATE</code> statement</li>
 <li>Similar to insert statements, there is a tuple variant and a variant with a struct</li>
@@ -463,19 +490,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Struct variant will be shown on the next slide</li>
 </ul>
 </aside>
-</section><section id="update-statements-1" class="slide level2">
+</section>
+<section id="update-statements-1" class="slide level2">
 <h2>Update statements</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb10-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>AsChangeset<span class="at">,</span> Identifiable<span class="at">)]</span></a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb10-3" title="3"><span class="kw">struct</span> ChangeStudent <span class="op">{</span></a>
-<a class="sourceLine" id="cb10-4" title="4">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb10-5" title="5">    name: Text,</a>
-<a class="sourceLine" id="cb10-6" title="6"><span class="op">}</span></a>
-<a class="sourceLine" id="cb10-7" title="7"></a>
-<a class="sourceLine" id="cb10-8" title="8"><span class="kw">let</span> changed_student: ChangeStudent = get_changed_student();</a>
-<a class="sourceLine" id="cb10-9" title="9"></a>
-<a class="sourceLine" id="cb10-10" title="10"><span class="pp">diesel::</span>update(&amp;changed_student)</a>
-<a class="sourceLine" id="cb10-11" title="11">    .set(&amp;changed_student).execute(&amp;conn);</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb10-1"><a href="#cb10-1"></a><span class="at">#[</span>derive<span class="at">(</span>AsChangeset<span class="at">,</span> Identifiable<span class="at">)]</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="kw">struct</span> ChangeStudent <span class="op">{</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb10-5"><a href="#cb10-5"></a>    name: Text,</span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="op">}</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="kw">let</span> changed_student: ChangeStudent = get_changed_student();</span>
+<span id="cb10-9"><a href="#cb10-9"></a></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="pp">diesel::</span>update(&amp;changed_student)</span>
+<span id="cb10-11"><a href="#cb10-11"></a>    .set(&amp;changed_student).execute(&amp;conn);</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Preferred variant when data structure for changeset already exists</li>
@@ -492,11 +520,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>[changeset_options(treat_none_as_null="true")]</code></li>
 </ul>
 </aside>
-</section><section id="delete-statements" class="slide level2">
+</section>
+<section id="delete-statements" class="slide level2">
 <h2>Delete statements</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb11-1" title="1"><span class="pp">diesel::</span>delete(</a>
-<a class="sourceLine" id="cb11-2" title="2">    <span class="pp">a_table::</span>table.filter(filter_expression)</a>
-<a class="sourceLine" id="cb11-3" title="3">).execute(&amp;conn)<span class="ch">&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb11-1"><a href="#cb11-1"></a><span class="pp">diesel::</span>delete(</span>
+<span id="cb11-2"><a href="#cb11-2"></a>    <span class="pp">a_table::</span>table.filter(filter_expression)</span>
+<span id="cb11-3"><a href="#cb11-3"></a>).execute(&amp;conn)<span class="ch">&#39;</span></span></code></pre></div>
 <ul>
 <li>Creates a <code>DROP FROM a_table</code> statement</li>
 </ul>
@@ -507,18 +536,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Also possible to use a struct implementing <code>Identifiable</code> instead of table + optional filter</li>
 </ul>
 </aside>
-</section><section id="raw-sql-queries" class="slide level2">
+</section>
+<section id="raw-sql-queries" class="slide level2">
 <h2>Raw SQL queries</h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb12-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>QueryableByName<span class="at">)]</span></a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb12-3" title="3"><span class="kw">struct</span> Student <span class="op">{</span></a>
-<a class="sourceLine" id="cb12-4" title="4">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb12-5" title="5">    name: <span class="dt">String</span></a>
-<a class="sourceLine" id="cb12-6" title="6"><span class="op">}</span></a>
-<a class="sourceLine" id="cb12-7" title="7"></a>
-<a class="sourceLine" id="cb12-8" title="8"><span class="pp">diesel::</span>sql_query(<span class="st">&quot;SELECT id, name FROM students WHERE name = $1&quot;</span>)</a>
-<a class="sourceLine" id="cb12-9" title="9">    .<span class="pp">bind::</span>&lt;Text, _&gt;(<span class="st">&quot;weiznich&quot;</span>)</a>
-<a class="sourceLine" id="cb12-10" title="10">    .load(&amp;conn);</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb12-1"><a href="#cb12-1"></a><span class="at">#[</span>derive<span class="at">(</span>QueryableByName<span class="at">)]</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="kw">struct</span> Student <span class="op">{</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb12-5"><a href="#cb12-5"></a>    name: <span class="dt">String</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="op">}</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="pp">diesel::</span>sql_query(<span class="st">&quot;SELECT id, name FROM students WHERE name = $1&quot;</span>)</span>
+<span id="cb12-9"><a href="#cb12-9"></a>    .<span class="pp">bind::</span>&lt;Text, _&gt;(<span class="st">&quot;weiznich&quot;</span>)</span>
+<span id="cb12-10"><a href="#cb12-10"></a>    .load(&amp;conn);</span></code></pre></div>
 <ul>
 <li>Raw SQL query interface</li>
 <li>Meant to be used when the query DSL is missing some expressions or failed to express something complex</li>
@@ -541,25 +571,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Different bind syntax per backend</li>
 </ul>
 </aside>
-</section><section id="complex-queries" class="slide level2">
+</section>
+<section id="complex-queries" class="slide level2">
 <h2>“Complex” queries</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb13-1" title="1"><span class="pp">table!</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb13-2" title="2">    students <span class="op">{</span></a>
-<a class="sourceLine" id="cb13-3" title="3">        id -&gt; Integer,</a>
-<a class="sourceLine" id="cb13-4" title="4">        name -&gt; Text,</a>
-<a class="sourceLine" id="cb13-5" title="5">        supervisor -&gt; Integer,</a>
-<a class="sourceLine" id="cb13-6" title="6">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb13-7" title="7"><span class="op">}</span></a>
-<a class="sourceLine" id="cb13-8" title="8"></a>
-<a class="sourceLine" id="cb13-9" title="9"><span class="pp">table!</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb13-10" title="10">    teachers <span class="op">{</span></a>
-<a class="sourceLine" id="cb13-11" title="11">        id -&gt; Integer,</a>
-<a class="sourceLine" id="cb13-12" title="12">        name -&gt; Text,</a>
-<a class="sourceLine" id="cb13-13" title="13">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb13-14" title="14"><span class="op">}</span></a>
-<a class="sourceLine" id="cb13-15" title="15"></a>
-<a class="sourceLine" id="cb13-16" title="16"><span class="pp">allow_tables_to_appear_in_same_query!</span>(students, teachers);</a>
-<a class="sourceLine" id="cb13-17" title="17"><span class="pp">joinable!</span>(students -&gt; teachers (supervisor));</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb13-1"><a href="#cb13-1"></a><span class="pp">table!</span> <span class="op">{</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>    students <span class="op">{</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>        id -&gt; Integer,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>        name -&gt; Text,</span>
+<span id="cb13-5"><a href="#cb13-5"></a>        supervisor -&gt; Integer,</span>
+<span id="cb13-6"><a href="#cb13-6"></a>    <span class="op">}</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="op">}</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a></span>
+<span id="cb13-9"><a href="#cb13-9"></a><span class="pp">table!</span> <span class="op">{</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a>    teachers <span class="op">{</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a>        id -&gt; Integer,</span>
+<span id="cb13-12"><a href="#cb13-12"></a>        name -&gt; Text,</span>
+<span id="cb13-13"><a href="#cb13-13"></a>    <span class="op">}</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a><span class="op">}</span></span>
+<span id="cb13-15"><a href="#cb13-15"></a></span>
+<span id="cb13-16"><a href="#cb13-16"></a><span class="pp">allow_tables_to_appear_in_same_query!</span>(students, teachers);</span>
+<span id="cb13-17"><a href="#cb13-17"></a><span class="pp">joinable!</span>(students -&gt; teachers (supervisor));</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Example a bit longer, multiple slides</li>
@@ -568,29 +599,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Talk about different approaches</li>
 </ul>
 </aside>
-</section><section id="complex-queries-naive-way" class="slide level2">
+</section>
+<section id="complex-queries-naive-way" class="slide level2">
 <h2>“Complex” queries (naive way)</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">let</span> teachers = <span class="pp">teachers::</span>table.<span class="pp">load::</span>&lt;Teacher&gt;(&amp;conn)?;</a>
-<a class="sourceLine" id="cb14-2" title="2"></a>
-<a class="sourceLine" id="cb14-3" title="3"><span class="kw">let</span> teacher_and_students: <span class="dt">Vec</span>&lt;(Teacher, <span class="dt">Vec</span>&lt;Student&gt;)&gt; =</a>
-<a class="sourceLine" id="cb14-4" title="4">    teachers.into_iter()</a>
-<a class="sourceLine" id="cb14-5" title="5">        .map(|teacher| <span class="op">{</span></a>
-<a class="sourceLine" id="cb14-6" title="6">            <span class="kw">let</span> students = <span class="pp">students::</span>table</a>
-<a class="sourceLine" id="cb14-7" title="7">                .filter(<span class="pp">students::</span>supervisor.eq(teacher.id))</a>
-<a class="sourceLine" id="cb14-8" title="8">                .<span class="pp">load::</span>&lt;Student&gt;(&amp;conn)?;</a>
-<a class="sourceLine" id="cb14-9" title="9">            <span class="cn">Ok</span>((teacher, students))</a>
-<a class="sourceLine" id="cb14-10" title="10">        <span class="op">}</span>).collect()?;</a></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">let</span> teachers = <span class="pp">teachers::</span>table.<span class="pp">load::</span>&lt;Teacher&gt;(&amp;conn)?;</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="kw">let</span> teacher_and_students: <span class="dt">Vec</span>&lt;(Teacher, <span class="dt">Vec</span>&lt;Student&gt;)&gt; =</span>
+<span id="cb14-4"><a href="#cb14-4"></a>    teachers.into_iter()</span>
+<span id="cb14-5"><a href="#cb14-5"></a>        .map(|teacher| <span class="op">{</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>            <span class="kw">let</span> students = <span class="pp">students::</span>table</span>
+<span id="cb14-7"><a href="#cb14-7"></a>                .filter(<span class="pp">students::</span>supervisor.eq(teacher.id))</span>
+<span id="cb14-8"><a href="#cb14-8"></a>                .<span class="pp">load::</span>&lt;Student&gt;(&amp;conn)?;</span>
+<span id="cb14-9"><a href="#cb14-9"></a>            <span class="cn">Ok</span>((teacher, students))</span>
+<span id="cb14-10"><a href="#cb14-10"></a>        <span class="op">}</span>).collect()?;</span></code></pre></div>
 <aside class="notes">
 <ul>
-<li>What is the problem with that approach?</li>
+<li><p>What is the problem with that approach?</p></li>
 <li><p>How could we do that better?</p></li>
-<li>N + 1 Query problem, does not scale well</li>
+<li><p>N + 1 Query problem, does not scale well</p></li>
 </ul>
 </aside>
-</section><section id="complex-queries-joins" class="slide level2">
+</section>
+<section id="complex-queries-joins" class="slide level2">
 <h2>“Complex” queries (joins)</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb15-1" title="1"><span class="pp">teachers::</span>table.inner_join(<span class="pp">students::</span>table)</a>
-<a class="sourceLine" id="cb15-2" title="2">    .<span class="pp">load::</span>&lt;(Teacher, Student)&gt;(&amp;conn);</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb15-1"><a href="#cb15-1"></a><span class="pp">teachers::</span>table.inner_join(<span class="pp">students::</span>table)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>    .<span class="pp">load::</span>&lt;(Teacher, Student)&gt;(&amp;conn);</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Better?</li>
@@ -601,33 +634,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="complex-queries-associations" class="slide level2">
+</section>
+<section id="complex-queries-associations" class="slide level2">
 <h2>“Complex” queries (associations)</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb16-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>Identifiable<span class="at">,</span> Queryable<span class="at">)]</span></a>
-<a class="sourceLine" id="cb16-2" title="2"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;teachers&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb16-3" title="3"><span class="kw">struct</span> Teacher <span class="op">{</span></a>
-<a class="sourceLine" id="cb16-4" title="4">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb16-5" title="5">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb16-6" title="6"><span class="op">}</span></a>
-<a class="sourceLine" id="cb16-7" title="7"></a>
-<a class="sourceLine" id="cb16-8" title="8"><span class="at">#[</span>derive<span class="at">(</span>Identifiable<span class="at">,</span> Queryable<span class="at">,</span> Associations<span class="at">)]</span></a>
-<a class="sourceLine" id="cb16-9" title="9"><span class="at">#[</span>belongs_to<span class="at">(</span>Teacher<span class="at">,</span> foreign_key <span class="at">=</span> <span class="st">&quot;supervisor&quot;</span><span class="at">)]</span></a>
-<a class="sourceLine" id="cb16-10" title="10"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb16-11" title="11"><span class="kw">struct</span> Student <span class="op">{</span></a>
-<a class="sourceLine" id="cb16-12" title="12">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb16-13" title="13">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb16-14" title="14">    supervisor: <span class="dt">i32</span></a>
-<a class="sourceLine" id="cb16-15" title="15"><span class="op">}</span></a>
-<a class="sourceLine" id="cb16-16" title="16"></a>
-<a class="sourceLine" id="cb16-17" title="17"><span class="kw">let</span> teachers = <span class="pp">teachers::</span>table.<span class="pp">load::</span>&lt;Teacher&gt;(&amp;conn)?;</a>
-<a class="sourceLine" id="cb16-18" title="18"></a>
-<a class="sourceLine" id="cb16-19" title="19"><span class="kw">let</span> students = <span class="pp">Student::</span>belonging_to(&amp;teachers)</a>
-<a class="sourceLine" id="cb16-20" title="20">    .<span class="pp">load::</span>&lt;Student&gt;(&amp;conn)?</a>
-<a class="sourceLine" id="cb16-21" title="21">    .grouped_by(&amp;teachers);</a>
-<a class="sourceLine" id="cb16-22" title="22"></a>
-<a class="sourceLine" id="cb16-23" title="23"><span class="kw">let</span> teachers_with_students = teachers.into_iter()</a>
-<a class="sourceLine" id="cb16-24" title="24">    .zip(students)</a>
-<a class="sourceLine" id="cb16-25" title="25">    .<span class="pp">collect::</span>&lt;<span class="dt">Vec</span>&lt;(Teacher, <span class="dt">Vec</span>&lt;Student&gt;)&gt;&gt;();</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb16-1"><a href="#cb16-1"></a><span class="at">#[</span>derive<span class="at">(</span>Identifiable<span class="at">,</span> Queryable<span class="at">)]</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;teachers&quot;</span><span class="at">]</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">struct</span> Teacher <span class="op">{</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb16-5"><a href="#cb16-5"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="op">}</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="at">#[</span>derive<span class="at">(</span>Identifiable<span class="at">,</span> Queryable<span class="at">,</span> Associations<span class="at">)]</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a><span class="at">#[</span>belongs_to<span class="at">(</span>Teacher<span class="at">,</span> foreign_key <span class="at">=</span> <span class="st">&quot;supervisor&quot;</span><span class="at">)]</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a><span class="kw">struct</span> Student <span class="op">{</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb16-13"><a href="#cb16-13"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb16-14"><a href="#cb16-14"></a>    supervisor: <span class="dt">i32</span></span>
+<span id="cb16-15"><a href="#cb16-15"></a><span class="op">}</span></span>
+<span id="cb16-16"><a href="#cb16-16"></a></span>
+<span id="cb16-17"><a href="#cb16-17"></a><span class="kw">let</span> teachers = <span class="pp">teachers::</span>table.<span class="pp">load::</span>&lt;Teacher&gt;(&amp;conn)?;</span>
+<span id="cb16-18"><a href="#cb16-18"></a></span>
+<span id="cb16-19"><a href="#cb16-19"></a><span class="kw">let</span> students = <span class="pp">Student::</span>belonging_to(&amp;teachers)</span>
+<span id="cb16-20"><a href="#cb16-20"></a>    .<span class="pp">load::</span>&lt;Student&gt;(&amp;conn)?</span>
+<span id="cb16-21"><a href="#cb16-21"></a>    .grouped_by(&amp;teachers);</span>
+<span id="cb16-22"><a href="#cb16-22"></a></span>
+<span id="cb16-23"><a href="#cb16-23"></a><span class="kw">let</span> teachers_with_students = teachers.into_iter()</span>
+<span id="cb16-24"><a href="#cb16-24"></a>    .zip(students)</span>
+<span id="cb16-25"><a href="#cb16-25"></a>    .<span class="pp">collect::</span>&lt;<span class="dt">Vec</span>&lt;(Teacher, <span class="dt">Vec</span>&lt;Student&gt;)&gt;&gt;();</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Use two queries to load all data
@@ -642,7 +676,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Grouping is done on application side, but that’s normally faster than calling the database again</li>
 </ul>
 </aside>
-</section><section id="common-errors" class="slide level2">
+</section>
+<section id="common-errors" class="slide level2">
 <h2>Common Errors</h2>
 <ul>
 <li>Diesel uses the type system to check if
@@ -657,13 +692,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <aside class="notes">
 <ul>
 <li><p>from clause contains table of selected fields</p></li>
-<li>Give a example for each on the next few slides</li>
-<li>Generally speaking: Getting an error that some diesel trait is not implemented for some diesel type mostly means that you’ve done something that would result in an invalid query or an incompatible type mapping</li>
+<li><p>Give a example for each on the next few slides</p></li>
+<li><p>Generally speaking: Getting an error that some diesel trait is not implemented for some diesel type mostly means that you’ve done something that would result in an invalid query or an incompatible type mapping</p></li>
 </ul>
 </aside>
-</section><section id="common-errors-invalid-sql" class="slide level2">
+</section>
+<section id="common-errors-invalid-sql" class="slide level2">
 <h2>Common Errors (Invalid SQL)</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb17-1" title="1"><span class="pp">students::</span>table.select(<span class="pp">teachers::</span>name).<span class="pp">load::</span>&lt;Student&gt;(&amp;conn);</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb17-1"><a href="#cb17-1"></a><span class="pp">students::</span>table.select(<span class="pp">teachers::</span>name).<span class="pp">load::</span>&lt;Student&gt;(&amp;conn);</span></code></pre></div>
 <pre><code>error[E0277]: the trait bound `teachers::columns::name: diesel::SelectableExpression&lt;students::table&gt;` is not satisfied
   --&gt; src/main.rs:30:21
    |
@@ -677,17 +713,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Error message pointing to the concrete problem and telling you that it is not possible to select the column from the other table</li>
 </ul>
 </aside>
-</section><section id="common-errors-result-missmatch" class="slide level2">
+</section>
+<section id="common-errors-result-missmatch" class="slide level2">
 <h2>Common Errors (Result missmatch)</h2>
-<div class="sourceCode" id="cb19"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb19-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>Queryable<span class="at">)]</span></a>
-<a class="sourceLine" id="cb19-2" title="2"><span class="kw">struct</span> Student <span class="op">{</span></a>
-<a class="sourceLine" id="cb19-3" title="3">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb19-4" title="4">    name: <span class="dt">String</span></a>
-<a class="sourceLine" id="cb19-5" title="5"><span class="op">}</span></a>
-<a class="sourceLine" id="cb19-6" title="6"></a>
-<a class="sourceLine" id="cb19-7" title="7"><span class="kw">let</span> s: <span class="dt">Vec</span>&lt;Student&gt; = <span class="pp">students::</span>table</a>
-<a class="sourceLine" id="cb19-8" title="8">    .select(<span class="pp">students::</span>id)</a>
-<a class="sourceLine" id="cb19-9" title="9">    .load(conn);</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb19-1"><a href="#cb19-1"></a><span class="at">#[</span>derive<span class="at">(</span>Queryable<span class="at">)]</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">struct</span> Student <span class="op">{</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb19-4"><a href="#cb19-4"></a>    name: <span class="dt">String</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="op">}</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="kw">let</span> s: <span class="dt">Vec</span>&lt;Student&gt; = <span class="pp">students::</span>table</span>
+<span id="cb19-8"><a href="#cb19-8"></a>    .select(<span class="pp">students::</span>id)</span>
+<span id="cb19-9"><a href="#cb19-9"></a>    .load(conn);</span></code></pre></div>
 <pre><code>error[E0277]: the trait bound `(std::string::String, i32): diesel::Queryable&lt;diesel::sql_types::Integer, diesel::pg::Pg&gt;` is not satisfied
   --&gt; src/main.rs:34:64
    |
@@ -698,11 +735,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Error mentions that the query returns one field (<code>Queryable</code>) whereas the result type as two types (tuple).</li>
 </ul>
 </aside>
-</section><section id="common-errors-type-missmatch" class="slide level2">
+</section>
+<section id="common-errors-type-missmatch" class="slide level2">
 <h2>Common Errors (Type missmatch)</h2>
-<div class="sourceCode" id="cb21"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb21-1" title="1"><span class="kw">let</span> s: <span class="dt">Vec</span>&lt;<span class="dt">String</span>&gt; = <span class="pp">students::</span>table</a>
-<a class="sourceLine" id="cb21-2" title="2">    .select(<span class="pp">students::</span>id)</a>
-<a class="sourceLine" id="cb21-3" title="3">    .load(conn);</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">let</span> s: <span class="dt">Vec</span>&lt;<span class="dt">String</span>&gt; = <span class="pp">students::</span>table</span>
+<span id="cb21-2"><a href="#cb21-2"></a>    .select(<span class="pp">students::</span>id)</span>
+<span id="cb21-3"><a href="#cb21-3"></a>    .load(conn);</span></code></pre></div>
 <pre><code>error[E0277]: the trait bound `*const str: diesel::deserialize::FromSql&lt;diesel::sql_types::Integer, diesel::pg::Pg&gt;` is not satisfied
   --&gt; src/main.rs:34:63
    |
@@ -720,7 +758,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Some type mappings are only supported for certain backends (<code>Uuid</code> for example)</li>
 </ul>
 </aside>
-</section><section id="current-shortcomings-of-diesel" class="slide level2">
+</section>
+<section id="current-shortcomings-of-diesel" class="slide level2">
 <h2>Current shortcomings of Diesel</h2>
 <ul>
 <li>No support for <code>GROUP BY</code> clauses and mixing aggregating and non aggregating expressions</li>
@@ -737,7 +776,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>We will explore some of those points in greater detail later in our workshop</li>
 </ul>
 </aside>
-</section><section id="building-a-first-simple-example" class="slide level2">
+</section>
+<section id="building-a-first-simple-example" class="slide level2">
 <h2>Building a first simple example</h2>
 <ul>
 <li>We want to build a simple blog backend</li>
@@ -756,7 +796,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Choose postgresql as database system, because we will do some advanced postgres function stuff later</li>
 </ul>
 </aside>
-</section><section id="build-a-first-small-example" class="slide level2">
+</section>
+<section id="build-a-first-small-example" class="slide level2">
 <h2>Build a first small example</h2>
 <p><strong>Bootstrap a simple REST API for the given database schema:</strong></p>
 <ol start="0" type="1">
@@ -779,7 +820,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </aside>
 </section></section>
-<section><section id="diesel-implementation-side" class="title-slide slide level1"><h1>Diesel (Implementation side)</h1></section><section id="custom-types" class="slide level2">
+<section><section id="diesel-implementation-side" class="title-slide slide level1"><h1>Diesel (Implementation side)</h1><aside class="notes">
+<ul>
+<li>Talk about some “advance” diesel stuff
+<ul>
+<li>custom data types</li>
+<li>dynamic queries</li>
+<li>Abstract over queries</li>
+</ul></li>
+<li>Talk about some internals</li>
+<li>Some of those stuff is not really present in our current documentation</li>
+</ul>
+</aside></section>
+<section id="custom-types" class="slide level2">
 <h2>Custom types</h2>
 <ul>
 <li>Diesel supports a set of commonly used types out of the box</li>
@@ -792,20 +845,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Example works similar for other types like mapping an enum to an existing data type or adding support for composite types</li>
 </ul>
 </aside>
-</section><section id="custom-types-1" class="slide level2">
+</section>
+<section id="custom-types-1" class="slide level2">
 <h2>Custom types</h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">CREATE</span> <span class="kw">TYPE</span> color <span class="kw">AS</span> ENUM (<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>);</a></code></pre></div>
-<div class="sourceCode" id="cb24"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb24-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>SqlType<span class="at">,</span> QueryId<span class="at">)]</span></a>
-<a class="sourceLine" id="cb24-2" title="2"><span class="at">#[</span>postgres<span class="at">(</span>type_name <span class="at">=</span> <span class="st">&quot;color&quot;</span><span class="at">)]</span></a>
-<a class="sourceLine" id="cb24-3" title="3"><span class="kw">struct</span> ColorType;</a>
-<a class="sourceLine" id="cb24-4" title="4"></a>
-<a class="sourceLine" id="cb24-5" title="5"><span class="at">#[</span>derive<span class="at">(</span>FromSqlRow<span class="at">,</span> AsExrpession<span class="at">)]</span></a>
-<a class="sourceLine" id="cb24-6" title="6"><span class="at">#[</span>sql_type <span class="at">=</span> <span class="st">&quot;ColorType&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb24-7" title="7"><span class="kw">enum</span> Color <span class="op">{</span></a>
-<a class="sourceLine" id="cb24-8" title="8">    Red,</a>
-<a class="sourceLine" id="cb24-9" title="9">    Green,</a>
-<a class="sourceLine" id="cb24-10" title="10">    Blue,</a>
-<a class="sourceLine" id="cb24-11" title="11"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">CREATE</span> <span class="kw">TYPE</span> color <span class="kw">AS</span> ENUM (<span class="st">&#39;red&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;blue&#39;</span>);</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb24-1"><a href="#cb24-1"></a><span class="at">#[</span>derive<span class="at">(</span>SqlType<span class="at">,</span> QueryId<span class="at">)]</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="at">#[</span>postgres<span class="at">(</span>type_name <span class="at">=</span> <span class="st">&quot;color&quot;</span><span class="at">)]</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="kw">struct</span> ColorType;</span>
+<span id="cb24-4"><a href="#cb24-4"></a></span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="at">#[</span>derive<span class="at">(</span>FromSqlRow<span class="at">,</span> AsExrpession<span class="at">)]</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="at">#[</span>sql_type <span class="at">=</span> <span class="st">&quot;ColorType&quot;</span><span class="at">]</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a><span class="kw">enum</span> Color <span class="op">{</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a>    Red,</span>
+<span id="cb24-9"><a href="#cb24-9"></a>    Green,</span>
+<span id="cb24-10"><a href="#cb24-10"></a>    Blue,</span>
+<span id="cb24-11"><a href="#cb24-11"></a><span class="op">}</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>First snipped defines type on sql side</li>
@@ -816,29 +870,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The second type is used to actually hold the value on rust side</li>
 </ul>
 </aside>
-</section><section id="custom-types-2" class="slide level2">
+</section>
+<section id="custom-types-2" class="slide level2">
 <h2>Custom types</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">impl</span> FromSql&lt;ColorType, Pg&gt; <span class="kw">for</span> Color <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-2" title="2">    <span class="kw">fn</span> from_sql(bytes: <span class="dt">Option</span>&lt;&amp;<span class="op">[</span><span class="dt">u8</span><span class="op">]</span>&gt;) -&gt; <span class="dt">Result</span>&lt;<span class="kw">Self</span>&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-3" title="3">        <span class="kw">match</span> bytes <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-4" title="4">            <span class="cn">Some</span>(<span class="st">b&quot;red&quot;</span>) =&gt; <span class="cn">Ok</span>(<span class="pp">Color::</span>Red),</a>
-<a class="sourceLine" id="cb25-5" title="5">            <span class="cn">Some</span>(<span class="st">b&quot;green&quot;</span>) =&gt; <span class="cn">Ok</span>(<span class="pp">Color::</span>Green),</a>
-<a class="sourceLine" id="cb25-6" title="6">            <span class="cn">Some</span>(<span class="st">b&quot;blue&quot;</span>) =&gt; <span class="cn">Ok</span>(<span class="pp">Color::</span>Blue),</a>
-<a class="sourceLine" id="cb25-7" title="7">            _ =&gt; <span class="cn">Err</span>(<span class="st">&quot;Unrecognized enum variant&quot;</span>.into())</a>
-<a class="sourceLine" id="cb25-8" title="8">        <span class="op">}</span></a>
-<a class="sourceLine" id="cb25-9" title="9">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb25-10" title="10"><span class="op">}</span></a>
-<a class="sourceLine" id="cb25-11" title="11"></a>
-<a class="sourceLine" id="cb25-12" title="12"><span class="kw">impl</span> ToSql&lt;ColorType, Pg&gt; Color <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-13" title="13">    <span class="kw">fn</span> to_sql&lt;W: Write&gt;(&amp;<span class="kw">self</span>, out: &amp;<span class="kw">mut</span> Output&lt;W, Pg&gt;) -&gt; <span class="dt">Result</span>&lt;IsNull&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-14" title="14">         <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb25-15" title="15">             <span class="pp">Color::</span>Red =&gt; out.write_all(<span class="st">b&quot;red&quot;</span>)?;,</a>
-<a class="sourceLine" id="cb25-16" title="16">             <span class="pp">Color::</span>Green =&gt; out.write_all(<span class="st">b&quot;green&quot;</span>)?;</a>
-<a class="sourceLine" id="cb25-17" title="17">             <span class="pp">Color::</span>Blue =&gt; out.write_all(<span class="st">b&quot;blue&quot;</span>)?;</a>
-<a class="sourceLine" id="cb25-18" title="18">         <span class="op">}</span></a>
-<a class="sourceLine" id="cb25-19" title="19">         <span class="cn">Ok</span>(<span class="pp">IsNull::</span>No)</a>
-<a class="sourceLine" id="cb25-20" title="20">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb25-21" title="21"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb25-1"><a href="#cb25-1"></a><span class="kw">impl</span> FromSql&lt;ColorType, Pg&gt; <span class="kw">for</span> Color <span class="op">{</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a>    <span class="kw">fn</span> from_sql(bytes: <span class="dt">Option</span>&lt;&amp;<span class="op">[</span><span class="dt">u8</span><span class="op">]</span>&gt;) -&gt; <span class="dt">Result</span>&lt;<span class="kw">Self</span>&gt; <span class="op">{</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>        <span class="kw">match</span> bytes <span class="op">{</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>            <span class="cn">Some</span>(<span class="st">b&quot;red&quot;</span>) =&gt; <span class="cn">Ok</span>(<span class="pp">Color::</span>Red),</span>
+<span id="cb25-5"><a href="#cb25-5"></a>            <span class="cn">Some</span>(<span class="st">b&quot;green&quot;</span>) =&gt; <span class="cn">Ok</span>(<span class="pp">Color::</span>Green),</span>
+<span id="cb25-6"><a href="#cb25-6"></a>            <span class="cn">Some</span>(<span class="st">b&quot;blue&quot;</span>) =&gt; <span class="cn">Ok</span>(<span class="pp">Color::</span>Blue),</span>
+<span id="cb25-7"><a href="#cb25-7"></a>            _ =&gt; <span class="cn">Err</span>(<span class="st">&quot;Unrecognized enum variant&quot;</span>.into())</span>
+<span id="cb25-8"><a href="#cb25-8"></a>        <span class="op">}</span></span>
+<span id="cb25-9"><a href="#cb25-9"></a>    <span class="op">}</span></span>
+<span id="cb25-10"><a href="#cb25-10"></a><span class="op">}</span></span>
+<span id="cb25-11"><a href="#cb25-11"></a></span>
+<span id="cb25-12"><a href="#cb25-12"></a><span class="kw">impl</span> ToSql&lt;ColorType, Pg&gt; Color <span class="op">{</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a>    <span class="kw">fn</span> to_sql&lt;W: Write&gt;(&amp;<span class="kw">self</span>, out: &amp;<span class="kw">mut</span> Output&lt;W, Pg&gt;) -&gt; <span class="dt">Result</span>&lt;IsNull&gt; <span class="op">{</span></span>
+<span id="cb25-14"><a href="#cb25-14"></a>         <span class="kw">match</span> *<span class="kw">self</span> <span class="op">{</span></span>
+<span id="cb25-15"><a href="#cb25-15"></a>             <span class="pp">Color::</span>Red =&gt; out.write_all(<span class="st">b&quot;red&quot;</span>)?;,</span>
+<span id="cb25-16"><a href="#cb25-16"></a>             <span class="pp">Color::</span>Green =&gt; out.write_all(<span class="st">b&quot;green&quot;</span>)?;</span>
+<span id="cb25-17"><a href="#cb25-17"></a>             <span class="pp">Color::</span>Blue =&gt; out.write_all(<span class="st">b&quot;blue&quot;</span>)?;</span>
+<span id="cb25-18"><a href="#cb25-18"></a>         <span class="op">}</span></span>
+<span id="cb25-19"><a href="#cb25-19"></a>         <span class="cn">Ok</span>(<span class="pp">IsNull::</span>No)</span>
+<span id="cb25-20"><a href="#cb25-20"></a>    <span class="op">}</span></span>
+<span id="cb25-21"><a href="#cb25-21"></a><span class="op">}</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>That’s the place where we tell Diesel how those types look at database protocol level.</li>
@@ -851,7 +906,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="fundamental-traits" class="slide level2">
+</section>
+<section id="fundamental-traits" class="slide level2">
 <h2>Fundamental traits</h2>
 <ul>
 <li>Want to talk about a bit how Diesel queries work internally</li>
@@ -868,11 +924,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Expect a hand full of non trivial trait bounds</li>
 </ul>
 </aside>
-</section><section id="fundamental-traits-backend" class="slide level2">
+</section>
+<section id="fundamental-traits-backend" class="slide level2">
 <h2>Fundamental traits (Backend)</h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb26-1" title="1"><span class="kw">trait</span> Backend <span class="op">{</span></a>
-<a class="sourceLine" id="cb26-2" title="2">    <span class="kw">type</span> RawValue;</a>
-<a class="sourceLine" id="cb26-3" title="3"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">trait</span> Backend <span class="op">{</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>    <span class="kw">type</span> RawValue;</span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Central definition of a supported database</li>
 <li><code>RawValue</code> says which how data are represented at protocol level</li>
@@ -886,11 +943,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>RawValue</code> relevant for the definition of <code>FromSql</code>/<code>ToSql</code> we have seen before</li>
 </ul>
 </aside>
-</section><section id="fundamental-traits-queryfragment" class="slide level2">
+</section>
+<section id="fundamental-traits-queryfragment" class="slide level2">
 <h2>Fundamental traits (QueryFragment)</h2>
-<div class="sourceCode" id="cb27"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">trait</span> QueryFragment&lt;DB: Backend&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb27-2" title="2">    <span class="kw">fn</span> walk_ast(&amp;<span class="kw">self</span>, pass: AstPass&lt;DB&gt;) -&gt; QueryResult&lt;()&gt;;</a>
-<a class="sourceLine" id="cb27-3" title="3"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">trait</span> QueryFragment&lt;DB: Backend&gt; <span class="op">{</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>    <span class="kw">fn</span> walk_ast(&amp;<span class="kw">self</span>, pass: AstPass&lt;DB&gt;) -&gt; QueryResult&lt;()&gt;;</span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Trait indicating that some type could be translated to SQL.</li>
 <li>Used to construct the final query</li>
@@ -909,25 +967,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Allows to support backend specific features easily</li>
 </ul>
 </aside>
-</section><section id="fundamental-traits-queryfragment-1" class="slide level2">
+</section>
+<section id="fundamental-traits-queryfragment-1" class="slide level2">
 <h2>Fundamental traits (QueryFragment)</h2>
-<div class="sourceCode" id="cb28"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb28-1" title="1"><span class="kw">struct</span> <span class="bu">Eq</span>&lt;L, R&gt;<span class="op">{</span></a>
-<a class="sourceLine" id="cb28-2" title="2">    left: L,</a>
-<a class="sourceLine" id="cb28-3" title="3">    right: R,</a>
-<a class="sourceLine" id="cb28-4" title="4"><span class="op">}</span></a>
-<a class="sourceLine" id="cb28-5" title="5"></a>
-<a class="sourceLine" id="cb28-6" title="6"><span class="kw">impl</span>&lt;L, R&gt; QueryFragment&lt;Pg&gt; <span class="kw">for</span> <span class="bu">Eq</span>&lt;L, R&gt;</a>
-<a class="sourceLine" id="cb28-7" title="7"><span class="kw">where</span></a>
-<a class="sourceLine" id="cb28-8" title="8">    L: QueryFragment&lt;Pg&gt;,</a>
-<a class="sourceLine" id="cb28-9" title="9">    R: QueryFragment&lt;Pg&gt;,</a>
-<a class="sourceLine" id="cb28-10" title="10"><span class="op">{</span></a>
-<a class="sourceLine" id="cb28-11" title="11">    <span class="kw">fn</span> walk_ast(&amp;<span class="kw">self</span>, <span class="kw">mut</span> pass: AstPass&lt;DB&gt;) -&gt; QueryResult&lt;()&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb28-12" title="12">        <span class="kw">self</span>.left.walk_ast(pass.reborrow())?;</a>
-<a class="sourceLine" id="cb28-13" title="13">        pass.push_sql(<span class="st">&quot; = &quot;</span>);</a>
-<a class="sourceLine" id="cb28-14" title="14">        <span class="kw">self</span>.right.walk_ast(pass.reborrow())?;</a>
-<a class="sourceLine" id="cb28-15" title="15">        <span class="cn">Ok</span>(())</a>
-<a class="sourceLine" id="cb28-16" title="16">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb28-17" title="17"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">struct</span> <span class="bu">Eq</span>&lt;L, R&gt;<span class="op">{</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>    left: L,</span>
+<span id="cb28-3"><a href="#cb28-3"></a>    right: R,</span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="op">}</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="kw">impl</span>&lt;L, R&gt; QueryFragment&lt;Pg&gt; <span class="kw">for</span> <span class="bu">Eq</span>&lt;L, R&gt;</span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="kw">where</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>    L: QueryFragment&lt;Pg&gt;,</span>
+<span id="cb28-9"><a href="#cb28-9"></a>    R: QueryFragment&lt;Pg&gt;,</span>
+<span id="cb28-10"><a href="#cb28-10"></a><span class="op">{</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>    <span class="kw">fn</span> walk_ast(&amp;<span class="kw">self</span>, <span class="kw">mut</span> pass: AstPass&lt;DB&gt;) -&gt; QueryResult&lt;()&gt; <span class="op">{</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a>        <span class="kw">self</span>.left.walk_ast(pass.reborrow())?;</span>
+<span id="cb28-13"><a href="#cb28-13"></a>        pass.push_sql(<span class="st">&quot; = &quot;</span>);</span>
+<span id="cb28-14"><a href="#cb28-14"></a>        <span class="kw">self</span>.right.walk_ast(pass.reborrow())?;</span>
+<span id="cb28-15"><a href="#cb28-15"></a>        <span class="cn">Ok</span>(())</span>
+<span id="cb28-16"><a href="#cb28-16"></a>    <span class="op">}</span></span>
+<span id="cb28-17"><a href="#cb28-17"></a><span class="op">}</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Will use that example query node also for later examples</li>
@@ -937,21 +996,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>As long as no <code>dyn QueryFragment&lt;Pg&gt;</code> is involved <code>L</code> and <code>R</code> will be known at compile time -&gt; <code>walk_ast</code> calls to children will be inlined -&gt; query construction done mostly at compile time</li>
 </ul>
 </aside>
-</section><section id="fundamental-traits-queryid" class="slide level2">
+</section>
+<section id="fundamental-traits-queryid" class="slide level2">
 <h2>Fundamental traits (QueryId)</h2>
-<div class="sourceCode" id="cb29"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">trait</span> QueryId <span class="op">{</span></a>
-<a class="sourceLine" id="cb29-2" title="2">     <span class="kw">type</span> QueryId: Any;</a>
-<a class="sourceLine" id="cb29-3" title="3">     <span class="kw">const</span> HAS_STATIC_QUERY_ID: <span class="dt">bool</span>;</a>
-<a class="sourceLine" id="cb29-4" title="4">     <span class="kw">fn</span> query_id() -&gt; <span class="dt">Option</span>&lt;TypeId&gt; <span class="op">{}</span></a>
-<a class="sourceLine" id="cb29-5" title="5"><span class="op">}</span></a>
-<a class="sourceLine" id="cb29-6" title="6"></a>
-<a class="sourceLine" id="cb29-7" title="7"><span class="kw">impl</span>&lt;L, R&gt; QueryId <span class="kw">for</span> <span class="bu">Eq</span>&lt;L, R&gt;</a>
-<a class="sourceLine" id="cb29-8" title="8"><span class="kw">where</span> L: QueryId, R: QueryId</a>
-<a class="sourceLine" id="cb29-9" title="9"><span class="op">{</span></a>
-<a class="sourceLine" id="cb29-10" title="10">    <span class="kw">type</span> QueryId = <span class="kw">Self</span>;</a>
-<a class="sourceLine" id="cb29-11" title="11">    <span class="kw">const</span> HAS_STATIC_QUERY_ID: <span class="dt">bool</span> =</a>
-<a class="sourceLine" id="cb29-12" title="12">       <span class="pp">L::</span>HAS_STATIC_QUERY_ID &amp;&amp; <span class="pp">R::</span>HAS_STATIC_QUERY_ID;</a>
-<a class="sourceLine" id="cb29-13" title="13"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">trait</span> QueryId <span class="op">{</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>     <span class="kw">type</span> QueryId: Any;</span>
+<span id="cb29-3"><a href="#cb29-3"></a>     <span class="kw">const</span> HAS_STATIC_QUERY_ID: <span class="dt">bool</span>;</span>
+<span id="cb29-4"><a href="#cb29-4"></a>     <span class="kw">fn</span> query_id() -&gt; <span class="dt">Option</span>&lt;TypeId&gt; <span class="op">{}</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="op">}</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="kw">impl</span>&lt;L, R&gt; QueryId <span class="kw">for</span> <span class="bu">Eq</span>&lt;L, R&gt;</span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="kw">where</span> L: QueryId, R: QueryId</span>
+<span id="cb29-9"><a href="#cb29-9"></a><span class="op">{</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a>    <span class="kw">type</span> QueryId = <span class="kw">Self</span>;</span>
+<span id="cb29-11"><a href="#cb29-11"></a>    <span class="kw">const</span> HAS_STATIC_QUERY_ID: <span class="dt">bool</span> =</span>
+<span id="cb29-12"><a href="#cb29-12"></a>       <span class="pp">L::</span>HAS_STATIC_QUERY_ID &amp;&amp; <span class="pp">R::</span>HAS_STATIC_QUERY_ID;</span>
+<span id="cb29-13"><a href="#cb29-13"></a><span class="op">}</span></span></code></pre></div>
 <div>
 <ul>
 <li class="fragment">Used to optimize the prepared statement cache</li>
@@ -982,15 +1042,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Opt-Out for cases where different queries (different sql) are generated for the same data structure (<code>HAS_STATIC_QUERY_ID = false</code>, <code>TypeId = ()</code> in this case)</li>
 </ul>
 </aside>
-</section><section id="fundamental-traits-expression" class="slide level2">
+</section>
+<section id="fundamental-traits-expression" class="slide level2">
 <h2>Fundamental traits (Expression)</h2>
-<div class="sourceCode" id="cb30"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">pub</span> <span class="kw">trait</span> Expression <span class="op">{</span></a>
-<a class="sourceLine" id="cb30-2" title="2">    <span class="kw">type</span> SqlType;</a>
-<a class="sourceLine" id="cb30-3" title="3"><span class="op">}</span></a>
-<a class="sourceLine" id="cb30-4" title="4"></a>
-<a class="sourceLine" id="cb30-5" title="5"><span class="kw">impl</span>&lt;L, R&gt; Expression <span class="kw">for</span> <span class="bu">Eq</span>&lt;L, R&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb30-6" title="6">    <span class="kw">type</span> SqlType = Bool;</a>
-<a class="sourceLine" id="cb30-7" title="7"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">pub</span> <span class="kw">trait</span> Expression <span class="op">{</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>    <span class="kw">type</span> SqlType;</span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="op">}</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a></span>
+<span id="cb30-5"><a href="#cb30-5"></a><span class="kw">impl</span>&lt;L, R&gt; Expression <span class="kw">for</span> <span class="bu">Eq</span>&lt;L, R&gt; <span class="op">{</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>    <span class="kw">type</span> SqlType = Bool;</span>
+<span id="cb30-7"><a href="#cb30-7"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>A marker trait representing a typed SQL fragment</li>
 <li>Used for type checking the final query</li>
@@ -1002,26 +1063,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>You don’t need to implement that trait normally</li>
 </ul>
 </aside>
-</section><section id="expanded-example-query" class="slide level2">
+</section>
+<section id="expanded-example-query" class="slide level2">
 <h2>Expanded example query</h2>
-<div class="sourceCode" id="cb31"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb31-1" title="1"><span class="pp">students::</span>table.filter(<span class="pp">students::</span>id.eq(<span class="dv">42</span>)).select(<span class="pp">students::</span>id)</a></code></pre></div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb32-1" title="1">SelectStatement&lt;</a>
-<a class="sourceLine" id="cb32-2" title="2">    <span class="pp">students::</span>table, <span class="co">// The table type, indicating the from clause</span></a>
-<a class="sourceLine" id="cb32-3" title="3">    SelectClause&lt;<span class="pp">students::</span>id&gt;, <span class="co">// The select clause</span></a>
-<a class="sourceLine" id="cb32-4" title="4">    WhereClause&lt;<span class="bu">Eq</span>&lt;<span class="pp">students::</span>id, Bound&lt;<span class="dt">i32</span>, Integer&gt;&gt;&gt;, <span class="co">// The where clause</span></a>
-<a class="sourceLine" id="cb32-5" title="5">    <span class="co">// Skipped some more parameters for other clauses</span></a>
-<a class="sourceLine" id="cb32-6" title="6">&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb31-1"><a href="#cb31-1"></a><span class="pp">students::</span>table.filter(<span class="pp">students::</span>id.eq(<span class="dv">42</span>)).select(<span class="pp">students::</span>id)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb32-1"><a href="#cb32-1"></a>SelectStatement&lt;</span>
+<span id="cb32-2"><a href="#cb32-2"></a>    <span class="pp">students::</span>table, <span class="co">// The table type, indicating the from clause</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>    SelectClause&lt;<span class="pp">students::</span>id&gt;, <span class="co">// The select clause</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>    WhereClause&lt;<span class="bu">Eq</span>&lt;<span class="pp">students::</span>id, Bound&lt;<span class="dt">i32</span>, Integer&gt;&gt;&gt;, <span class="co">// The where clause</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>    <span class="co">// Skipped some more parameters for other clauses</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a>&gt;</span></code></pre></div>
 <div class="fragment">
-<div class="sourceCode" id="cb33"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb33-1" title="1">Select&lt;</a>
-<a class="sourceLine" id="cb33-2" title="2">    Filter&lt;<span class="pp">students::</span>table, <span class="bu">Eq</span>&lt;<span class="pp">students::</span>id, <span class="dt">i32</span>&gt;&gt;,</a>
-<a class="sourceLine" id="cb33-3" title="3">    <span class="pp">students::</span>id</a>
-<a class="sourceLine" id="cb33-4" title="4">&gt;</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb33-1"><a href="#cb33-1"></a>Select&lt;</span>
+<span id="cb33-2"><a href="#cb33-2"></a>    Filter&lt;<span class="pp">students::</span>table, <span class="bu">Eq</span>&lt;<span class="pp">students::</span>id, <span class="dt">i32</span>&gt;&gt;,</span>
+<span id="cb33-3"><a href="#cb33-3"></a>    <span class="pp">students::</span>id</span>
+<span id="cb33-4"><a href="#cb33-4"></a>&gt;</span></code></pre></div>
 <aside class="notes">
 <ul>
-<li>Each query expands to a unique type, depending on the actual query, similar to <code>Iterator</code></li>
-<li>Expanded example uses internal types that are not meant to be used outside of diesel itself</li>
+<li><p>Each query expands to a unique type, depending on the actual query, similar to <code>Iterator</code></p></li>
+<li><p>Expanded example uses internal types that are not meant to be used outside of diesel itself</p></li>
 <li><p><code>diesel::dsl</code> provides nice wrapper types</p></li>
-<li>So what consequences does this have?
+<li><p>So what consequences does this have?</p>
 <ul>
 <li>There is no single type to represent a query, each <code>QueryDsl</code> method call changes</li>
 <li>Hard/Impossible to build query conditionally based on some dynamic condition (Talk about this soon)</li>
@@ -1030,14 +1092,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </aside>
 </div>
-</section><section id="conditional-queries" class="slide level2">
+</section>
+<section id="conditional-queries" class="slide level2">
 <h2>Conditional queries</h2>
-<div class="sourceCode" id="cb34"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb34-1" title="1"></a>
-<a class="sourceLine" id="cb34-2" title="2"><span class="kw">let</span> <span class="kw">mut</span> query = <span class="pp">students::</span>table.select(<span class="pp">students::</span>name);</a>
-<a class="sourceLine" id="cb34-3" title="3"></a>
-<a class="sourceLine" id="cb34-4" title="4"><span class="kw">if</span> <span class="kw">let</span> <span class="cn">Some</span>(id) = filter_by_id <span class="op">{</span></a>
-<a class="sourceLine" id="cb34-5" title="5">    query = query.filter(<span class="pp">students::</span>id.eq(id));</a>
-<a class="sourceLine" id="cb34-6" title="6"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb34-1"><a href="#cb34-1"></a></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="kw">let</span> <span class="kw">mut</span> query = <span class="pp">students::</span>table.select(<span class="pp">students::</span>name);</span>
+<span id="cb34-3"><a href="#cb34-3"></a></span>
+<span id="cb34-4"><a href="#cb34-4"></a><span class="kw">if</span> <span class="kw">let</span> <span class="cn">Some</span>(id) = filter_by_id <span class="op">{</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>    query = query.filter(<span class="pp">students::</span>id.eq(id));</span>
+<span id="cb34-6"><a href="#cb34-6"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Does not work because the query with filter has a different type than the query without filter</li>
 </ul>
@@ -1047,14 +1110,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Diesel comes with a type that erases most of the generic select statement arguments</li>
 </ul>
 </aside>
-</section><section id="conditional-queries-1" class="slide level2">
+</section>
+<section id="conditional-queries-1" class="slide level2">
 <h2>Conditional queries</h2>
-<div class="sourceCode" id="cb35"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb35-1" title="1"><span class="kw">let</span> <span class="kw">mut</span> query = <span class="pp">students::</span>table.select(<span class="pp">students::</span>name)</a>
-<a class="sourceLine" id="cb35-2" title="2">     .into_boxed();</a>
-<a class="sourceLine" id="cb35-3" title="3"></a>
-<a class="sourceLine" id="cb35-4" title="4"><span class="kw">if</span> <span class="kw">let</span> <span class="cn">Some</span>(id) = filter_by_id <span class="op">{</span></a>
-<a class="sourceLine" id="cb35-5" title="5">    query = query.filter(<span class="pp">students::</span>id.eq(id));</a>
-<a class="sourceLine" id="cb35-6" title="6"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">let</span> <span class="kw">mut</span> query = <span class="pp">students::</span>table.select(<span class="pp">students::</span>name)</span>
+<span id="cb35-2"><a href="#cb35-2"></a>     .into_boxed();</span>
+<span id="cb35-3"><a href="#cb35-3"></a></span>
+<span id="cb35-4"><a href="#cb35-4"></a><span class="kw">if</span> <span class="kw">let</span> <span class="cn">Some</span>(id) = filter_by_id <span class="op">{</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a>    query = query.filter(<span class="pp">students::</span>id.eq(id));</span>
+<span id="cb35-6"><a href="#cb35-6"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li><code>.into_boxed</code> creates a boxed select statement that erases all generic arguments beside of the table name and target backend for the given select statement</li>
 </ul>
@@ -1077,7 +1141,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="extending-our-example" class="slide level2">
+</section>
+<section id="extending-our-example" class="slide level2">
 <h2>Extending our example:</h2>
 <ul>
 <li>Add a column to the <code>post</code> table indicating the state of the post.
@@ -1089,7 +1154,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Something like <code>http://localhost/posts?name="foo"&amp;order="id"</code></li>
 </ul></li>
 </ul>
-</section><section id="extending-our-example-1" class="slide level2">
+</section>
+<section id="extending-our-example-1" class="slide level2">
 <h2>Extending our example</h2>
 <ul>
 <li>Add a route that performs allows to pagination on the <code>post</code> table
@@ -1112,7 +1178,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </aside>
 </section></section>
-<section><section id="wundergraph" class="title-slide slide level1"><h1>Wundergraph</h1></section><section id="graphql" class="slide level2">
+<section><section id="wundergraph" class="title-slide slide level1"><h1>Wundergraph</h1></section>
+<section id="graphql" class="slide level2">
 <h2>GraphQL</h2>
 <ul>
 <li>A query language for API</li>
@@ -1135,7 +1202,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="what-is-wundergraph" class="slide level2">
+</section>
+<section id="what-is-wundergraph" class="slide level2">
 <h2>What is wundergraph</h2>
 <ul>
 <li>Wundergraph is a crate that helps you with developing a diesel/juniper based GraphQL service in rust</li>
@@ -1147,7 +1215,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Unlocks writing performant GraphQL API based on relational databases in rust</li>
 </ul>
 </aside>
-</section><section id="juniper" class="slide level2">
+</section>
+<section id="juniper" class="slide level2">
 <h2>Juniper</h2>
 <ul>
 <li>Foundational crate for writing GraphQL APIs in rust</li>
@@ -1159,26 +1228,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Short example on the next slide</li>
 </ul>
 </aside>
-</section><section id="juniper-1" class="slide level2">
+</section>
+<section id="juniper-1" class="slide level2">
 <h2>Juniper</h2>
-<div class="sourceCode" id="cb37"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb37-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>GraphQLObject<span class="at">)]</span></a>
-<a class="sourceLine" id="cb37-2" title="2"><span class="kw">struct</span> Student <span class="op">{</span></a>
-<a class="sourceLine" id="cb37-3" title="3">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb37-4" title="4">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb37-5" title="5"><span class="op">}</span></a>
-<a class="sourceLine" id="cb37-6" title="6"></a>
-<a class="sourceLine" id="cb37-7" title="7"><span class="kw">struct</span> Query;</a>
-<a class="sourceLine" id="cb37-8" title="8"></a>
-<a class="sourceLine" id="cb37-9" title="9"><span class="pp">juniper::graphql_object!</span>(Query: Context |&amp;<span class="kw">self</span>| <span class="op">{</span></a>
-<a class="sourceLine" id="cb37-10" title="10">    field apiVersion() -&gt; &amp;<span class="dt">str</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb37-11" title="11">        <span class="st">&quot;1.0&quot;</span></a>
-<a class="sourceLine" id="cb37-12" title="12">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb37-13" title="13"></a>
-<a class="sourceLine" id="cb37-14" title="14">    field student(&amp;executor, id: <span class="dt">i32</span>) -&gt; FieldResult&lt;Student&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb37-15" title="15">        <span class="kw">let</span> context = executor.context();</a>
-<a class="sourceLine" id="cb37-16" title="16">        context.load_student_with_id(id)</a>
-<a class="sourceLine" id="cb37-17" title="17">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb37-18" title="18"><span class="op">}</span>);</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb37-1"><a href="#cb37-1"></a><span class="at">#[</span>derive<span class="at">(</span>GraphQLObject<span class="at">)]</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="kw">struct</span> Student <span class="op">{</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb37-4"><a href="#cb37-4"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb37-5"><a href="#cb37-5"></a><span class="op">}</span></span>
+<span id="cb37-6"><a href="#cb37-6"></a></span>
+<span id="cb37-7"><a href="#cb37-7"></a><span class="kw">struct</span> Query;</span>
+<span id="cb37-8"><a href="#cb37-8"></a></span>
+<span id="cb37-9"><a href="#cb37-9"></a><span class="pp">juniper::graphql_object!</span>(Query: Context |&amp;<span class="kw">self</span>| <span class="op">{</span></span>
+<span id="cb37-10"><a href="#cb37-10"></a>    field apiVersion() -&gt; &amp;<span class="dt">str</span> <span class="op">{</span></span>
+<span id="cb37-11"><a href="#cb37-11"></a>        <span class="st">&quot;1.0&quot;</span></span>
+<span id="cb37-12"><a href="#cb37-12"></a>    <span class="op">}</span></span>
+<span id="cb37-13"><a href="#cb37-13"></a></span>
+<span id="cb37-14"><a href="#cb37-14"></a>    field student(&amp;executor, id: <span class="dt">i32</span>) -&gt; FieldResult&lt;Student&gt; <span class="op">{</span></span>
+<span id="cb37-15"><a href="#cb37-15"></a>        <span class="kw">let</span> context = executor.context();</span>
+<span id="cb37-16"><a href="#cb37-16"></a>        context.load_student_with_id(id)</span>
+<span id="cb37-17"><a href="#cb37-17"></a>    <span class="op">}</span></span>
+<span id="cb37-18"><a href="#cb37-18"></a><span class="op">}</span>);</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Simple example, see their docs for more complete examples</li>
@@ -1200,39 +1270,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="diesel-juniper-naive-way" class="slide level2">
+</section>
+<section id="diesel-juniper-naive-way" class="slide level2">
 <h2>Diesel + Juniper (naive way)</h2>
-<div class="sourceCode" id="cb38"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb38-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>GraphQLObject<span class="at">,</span> Queryable<span class="at">)]</span></a>
-<a class="sourceLine" id="cb38-2" title="2"><span class="kw">struct</span> Student <span class="op">{</span></a>
-<a class="sourceLine" id="cb38-3" title="3">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb38-4" title="4">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb38-5" title="5"><span class="op">}</span></a>
-<a class="sourceLine" id="cb38-6" title="6"></a>
-<a class="sourceLine" id="cb38-7" title="7"><span class="at">#[</span>derive<span class="at">(</span>Queryable<span class="at">)]</span></a>
-<a class="sourceLine" id="cb38-8" title="8"><span class="kw">struct</span> Teacher <span class="op">{</span></a>
-<a class="sourceLine" id="cb38-9" title="9">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb38-10" title="10">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb38-11" title="11"><span class="op">}</span></a>
-<a class="sourceLine" id="cb38-12" title="12"></a>
-<a class="sourceLine" id="cb38-13" title="13"><span class="pp">juniper::graphql_object!</span>(Teacher: Context |&amp;<span class="kw">self</span>| <span class="op">{</span></a>
-<a class="sourceLine" id="cb38-14" title="14">    field id() -&gt; <span class="dt">i32</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb38-15" title="15">        <span class="kw">self</span>.id</a>
-<a class="sourceLine" id="cb38-16" title="16">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb38-17" title="17"></a>
-<a class="sourceLine" id="cb38-18" title="18">    field name() -&gt; &amp;<span class="dt">str</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb38-19" title="19">        &amp;<span class="kw">self</span>.name</a>
-<a class="sourceLine" id="cb38-20" title="20">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb38-21" title="21"></a>
-<a class="sourceLine" id="cb38-22" title="22">    field students(&amp;executor) -&gt; FieldResult&lt;<span class="dt">Vec</span>&lt;Student&gt;&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb38-23" title="23">        <span class="kw">let</span> conn = executor.context().pool.get_connection()?;</a>
-<a class="sourceLine" id="cb38-24" title="24"></a>
-<a class="sourceLine" id="cb38-25" title="25">        <span class="kw">let</span> students = <span class="pp">students::</span>table</a>
-<a class="sourceLine" id="cb38-26" title="26">           .filter(<span class="pp">students::</span>supervisor.eq(<span class="kw">self</span>.id))</a>
-<a class="sourceLine" id="cb38-27" title="27">           .<span class="pp">load::</span>&lt;Student&gt;(&amp;conn)?;</a>
-<a class="sourceLine" id="cb38-28" title="28"></a>
-<a class="sourceLine" id="cb38-29" title="29">        <span class="cn">Ok</span>(students)</a>
-<a class="sourceLine" id="cb38-30" title="30">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb38-31" title="31"><span class="op">}</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb38-1"><a href="#cb38-1"></a><span class="at">#[</span>derive<span class="at">(</span>GraphQLObject<span class="at">,</span> Queryable<span class="at">)]</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="kw">struct</span> Student <span class="op">{</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb38-4"><a href="#cb38-4"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="op">}</span></span>
+<span id="cb38-6"><a href="#cb38-6"></a></span>
+<span id="cb38-7"><a href="#cb38-7"></a><span class="at">#[</span>derive<span class="at">(</span>Queryable<span class="at">)]</span></span>
+<span id="cb38-8"><a href="#cb38-8"></a><span class="kw">struct</span> Teacher <span class="op">{</span></span>
+<span id="cb38-9"><a href="#cb38-9"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb38-10"><a href="#cb38-10"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb38-11"><a href="#cb38-11"></a><span class="op">}</span></span>
+<span id="cb38-12"><a href="#cb38-12"></a></span>
+<span id="cb38-13"><a href="#cb38-13"></a><span class="pp">juniper::graphql_object!</span>(Teacher: Context |&amp;<span class="kw">self</span>| <span class="op">{</span></span>
+<span id="cb38-14"><a href="#cb38-14"></a>    field id() -&gt; <span class="dt">i32</span> <span class="op">{</span></span>
+<span id="cb38-15"><a href="#cb38-15"></a>        <span class="kw">self</span>.id</span>
+<span id="cb38-16"><a href="#cb38-16"></a>    <span class="op">}</span></span>
+<span id="cb38-17"><a href="#cb38-17"></a></span>
+<span id="cb38-18"><a href="#cb38-18"></a>    field name() -&gt; &amp;<span class="dt">str</span> <span class="op">{</span></span>
+<span id="cb38-19"><a href="#cb38-19"></a>        &amp;<span class="kw">self</span>.name</span>
+<span id="cb38-20"><a href="#cb38-20"></a>    <span class="op">}</span></span>
+<span id="cb38-21"><a href="#cb38-21"></a></span>
+<span id="cb38-22"><a href="#cb38-22"></a>    field students(&amp;executor) -&gt; FieldResult&lt;<span class="dt">Vec</span>&lt;Student&gt;&gt; <span class="op">{</span></span>
+<span id="cb38-23"><a href="#cb38-23"></a>        <span class="kw">let</span> conn = executor.context().pool.get_connection()?;</span>
+<span id="cb38-24"><a href="#cb38-24"></a></span>
+<span id="cb38-25"><a href="#cb38-25"></a>        <span class="kw">let</span> students = <span class="pp">students::</span>table</span>
+<span id="cb38-26"><a href="#cb38-26"></a>           .filter(<span class="pp">students::</span>supervisor.eq(<span class="kw">self</span>.id))</span>
+<span id="cb38-27"><a href="#cb38-27"></a>           .<span class="pp">load::</span>&lt;Student&gt;(&amp;conn)?;</span>
+<span id="cb38-28"><a href="#cb38-28"></a></span>
+<span id="cb38-29"><a href="#cb38-29"></a>        <span class="cn">Ok</span>(students)</span>
+<span id="cb38-30"><a href="#cb38-30"></a>    <span class="op">}</span></span>
+<span id="cb38-31"><a href="#cb38-31"></a><span class="op">}</span>)</span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Similar to the previous example, but now with two related entities</li>
@@ -1258,7 +1329,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="problems-with-the-naive-way" class="slide level2">
+</section>
+<section id="problems-with-the-naive-way" class="slide level2">
 <h2>Problems with the naive way</h2>
 <ul>
 <li>N + 1 Query problems</li>
@@ -1281,53 +1353,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="wundergraph-example" class="slide level2">
+</section>
+<section id="wundergraph-example" class="slide level2">
 <h2>Wundergraph Example</h2>
-<div class="sourceCode" id="cb39"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb39-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>Identifiable<span class="at">,</span> WundergraphEntity<span class="at">)]</span></a>
-<a class="sourceLine" id="cb39-2" title="2"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb39-3" title="3"><span class="kw">struct</span> Student <span class="op">{</span></a>
-<a class="sourceLine" id="cb39-4" title="4">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb39-5" title="5">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb39-6" title="6">    supervisor: HasOne&lt;<span class="dt">i32</span>, Teacher&gt;,</a>
-<a class="sourceLine" id="cb39-7" title="7"><span class="op">}</span></a>
-<a class="sourceLine" id="cb39-8" title="8"></a>
-<a class="sourceLine" id="cb39-9" title="9"><span class="at">#[</span>derive<span class="at">(</span>Identifiable<span class="at">,</span> WundergraphEntity<span class="at">)]</span></a>
-<a class="sourceLine" id="cb39-10" title="10"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;teachers&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb39-11" title="11"><span class="kw">struct</span> Teacher <span class="op">{</span></a>
-<a class="sourceLine" id="cb39-12" title="12">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb39-13" title="13">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb39-14" title="14">    students: HasMany&lt;Student, <span class="pp">students::</span>supervisor&gt;,</a>
-<a class="sourceLine" id="cb39-15" title="15"><span class="op">}</span></a>
-<a class="sourceLine" id="cb39-16" title="16"></a>
-<a class="sourceLine" id="cb39-17" title="17"><span class="pp">wundergraph::query_object!</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb39-18" title="18">    Query <span class="op">{</span></a>
-<a class="sourceLine" id="cb39-19" title="19">        Student,</a>
-<a class="sourceLine" id="cb39-20" title="20">        Teacher</a>
-<a class="sourceLine" id="cb39-21" title="21">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb39-22" title="22"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb39-1"><a href="#cb39-1"></a><span class="at">#[</span>derive<span class="at">(</span>Identifiable<span class="at">,</span> WundergraphEntity<span class="at">)]</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a><span class="kw">struct</span> Student <span class="op">{</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb39-5"><a href="#cb39-5"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb39-6"><a href="#cb39-6"></a>    supervisor: HasOne&lt;<span class="dt">i32</span>, Teacher&gt;,</span>
+<span id="cb39-7"><a href="#cb39-7"></a><span class="op">}</span></span>
+<span id="cb39-8"><a href="#cb39-8"></a></span>
+<span id="cb39-9"><a href="#cb39-9"></a><span class="at">#[</span>derive<span class="at">(</span>Identifiable<span class="at">,</span> WundergraphEntity<span class="at">)]</span></span>
+<span id="cb39-10"><a href="#cb39-10"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;teachers&quot;</span><span class="at">]</span></span>
+<span id="cb39-11"><a href="#cb39-11"></a><span class="kw">struct</span> Teacher <span class="op">{</span></span>
+<span id="cb39-12"><a href="#cb39-12"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb39-13"><a href="#cb39-13"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb39-14"><a href="#cb39-14"></a>    students: HasMany&lt;Student, <span class="pp">students::</span>supervisor&gt;,</span>
+<span id="cb39-15"><a href="#cb39-15"></a><span class="op">}</span></span>
+<span id="cb39-16"><a href="#cb39-16"></a></span>
+<span id="cb39-17"><a href="#cb39-17"></a><span class="pp">wundergraph::query_object!</span> <span class="op">{</span></span>
+<span id="cb39-18"><a href="#cb39-18"></a>    Query <span class="op">{</span></span>
+<span id="cb39-19"><a href="#cb39-19"></a>        Student,</span>
+<span id="cb39-20"><a href="#cb39-20"></a>        Teacher</span>
+<span id="cb39-21"><a href="#cb39-21"></a>    <span class="op">}</span></span>
+<span id="cb39-22"><a href="#cb39-22"></a><span class="op">}</span></span></code></pre></div>
 <aside class="notes">
 <ul>
-<li>Structs just define the data layout of the graphql entities</li>
+<li><p>Structs just define the data layout of the graphql entities</p></li>
 <li><p>Talk about each part a bit more in detail in the next few slides</p></li>
 <li><p>Will talk about the internal implementation of all of this later today</p></li>
-<li>What is generated for you in the background:</li>
+<li><p>What is generated for you in the background:</p></li>
 </ul>
 </aside>
-</section><section id="wundergraphentity" class="slide level2">
+</section>
+<section id="wundergraphentity" class="slide level2">
 <h2><code>WundergraphEntity</code></h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb40-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>WundergraphEntity<span class="at">,</span> Identifiable<span class="at">)]</span></a>
-<a class="sourceLine" id="cb40-2" title="2"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;student&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb40-3" title="3"><span class="at">#[</span>primary_key<span class="at">(</span>id<span class="at">)]</span></a>
-<a class="sourceLine" id="cb40-4" title="4"><span class="co">/// GraphQL type description</span></a>
-<a class="sourceLine" id="cb40-5" title="5"><span class="kw">struct</span> Student <span class="op">{</span></a>
-<a class="sourceLine" id="cb40-6" title="6">    <span class="co">/// GraphQL field description</span></a>
-<a class="sourceLine" id="cb40-7" title="7">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb40-8" title="8">    <span class="at">#[</span>wundergraph<span class="at">(</span>graphql_name <span class="at">=</span> <span class="st">&quot;name&quot;</span><span class="at">)]</span></a>
-<a class="sourceLine" id="cb40-9" title="9">    <span class="at">#[</span>column_name <span class="at">=</span> <span class="st">&quot;name&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb40-10" title="10">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb40-11" title="11">    supervisor: HasOne&lt;<span class="dt">i32</span>, Teacher&gt;,</a>
-<a class="sourceLine" id="cb40-12" title="12">    papers: HasMany&lt;Paper, <span class="pp">papers::</span>student&gt;,</a>
-<a class="sourceLine" id="cb40-13" title="13"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb40-1"><a href="#cb40-1"></a><span class="at">#[</span>derive<span class="at">(</span>WundergraphEntity<span class="at">,</span> Identifiable<span class="at">)]</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;student&quot;</span><span class="at">]</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a><span class="at">#[</span>primary_key<span class="at">(</span>id<span class="at">)]</span></span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="co">/// GraphQL type description</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a><span class="kw">struct</span> Student <span class="op">{</span></span>
+<span id="cb40-6"><a href="#cb40-6"></a>    <span class="co">/// GraphQL field description</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb40-8"><a href="#cb40-8"></a>    <span class="at">#[</span>wundergraph<span class="at">(</span>graphql_name <span class="at">=</span> <span class="st">&quot;name&quot;</span><span class="at">)]</span></span>
+<span id="cb40-9"><a href="#cb40-9"></a>    <span class="at">#[</span>column_name <span class="at">=</span> <span class="st">&quot;name&quot;</span><span class="at">]</span></span>
+<span id="cb40-10"><a href="#cb40-10"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb40-11"><a href="#cb40-11"></a>    supervisor: HasOne&lt;<span class="dt">i32</span>, Teacher&gt;,</span>
+<span id="cb40-12"><a href="#cb40-12"></a>    papers: HasMany&lt;Paper, <span class="pp">papers::</span>student&gt;,</span>
+<span id="cb40-13"><a href="#cb40-13"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Marks a type as compatible wundergraph entity</li>
 <li>Controls corresponding GraphQL type</li>
@@ -1362,18 +1436,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="query_object" class="slide level2">
+</section>
+<section id="query_object" class="slide level2">
 <h2><code>query_object!</code></h2>
-<div class="sourceCode" id="cb41"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb41-1" title="1"><span class="pp">wundergraph::query_object!</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb41-2" title="2">    <span class="co">/// GraphQL description for query</span></a>
-<a class="sourceLine" id="cb41-3" title="3">    Query <span class="op">{</span></a>
-<a class="sourceLine" id="cb41-4" title="4">        <span class="co">/// GraphQL description for Student</span></a>
-<a class="sourceLine" id="cb41-5" title="5">        <span class="at">#[</span>deprecated<span class="at">(</span>note <span class="at">=</span> <span class="st">&quot;Why&quot;</span><span class="at">)]</span></a>
-<a class="sourceLine" id="cb41-6" title="6">        Student,</a>
-<a class="sourceLine" id="cb41-7" title="7">        <span class="at">#[</span>wundergraph<span class="at">(</span>filter <span class="at">=</span> <span class="cn">true</span><span class="at">,</span> offset <span class="at">=</span> <span class="cn">true</span><span class="at">,</span> order <span class="at">=</span> <span class="cn">true</span><span class="at">)]</span></a>
-<a class="sourceLine" id="cb41-8" title="8">        Teacher,</a>
-<a class="sourceLine" id="cb41-9" title="9">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb41-10" title="10"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb41-1"><a href="#cb41-1"></a><span class="pp">wundergraph::query_object!</span> <span class="op">{</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>    <span class="co">/// GraphQL description for query</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>    Query <span class="op">{</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a>        <span class="co">/// GraphQL description for Student</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a>        <span class="at">#[</span>deprecated<span class="at">(</span>note <span class="at">=</span> <span class="st">&quot;Why&quot;</span><span class="at">)]</span></span>
+<span id="cb41-6"><a href="#cb41-6"></a>        Student,</span>
+<span id="cb41-7"><a href="#cb41-7"></a>        <span class="at">#[</span>wundergraph<span class="at">(</span>filter <span class="at">=</span> <span class="cn">true</span><span class="at">,</span> offset <span class="at">=</span> <span class="cn">true</span><span class="at">,</span> order <span class="at">=</span> <span class="cn">true</span><span class="at">)]</span></span>
+<span id="cb41-8"><a href="#cb41-8"></a>        Teacher,</span>
+<span id="cb41-9"><a href="#cb41-9"></a>    <span class="op">}</span></span>
+<span id="cb41-10"><a href="#cb41-10"></a><span class="op">}</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Generates the root “Query” object.</li>
@@ -1395,7 +1470,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>[#wundergraph]</code> attribute control which optional arguments are generated</li>
 </ul>
 </aside>
-</section><section id="mutation" class="slide level2">
+</section>
+<section id="mutation" class="slide level2">
 <h2>Mutation</h2>
 <ul>
 <li>Per convention there is a “special” mutation object in GraphQL schemas allowing to mutate data</li>
@@ -1415,7 +1491,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>return data specified as normal graphql requested fields</li>
 </ul>
 </aside>
-</section><section id="mutation-implementation" class="slide level2">
+</section>
+<section id="mutation-implementation" class="slide level2">
 <h2>Mutation (implementation)</h2>
 <ul>
 <li>Structs implementing …
@@ -1439,29 +1516,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="mutation-implementation-1" class="slide level2">
+</section>
+<section id="mutation-implementation-1" class="slide level2">
 <h2>Mutation (implementation)</h2>
-<div class="sourceCode" id="cb43"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb43-1" title="1"><span class="at">#[</span>derive<span class="at">(</span>Insertable<span class="at">,</span> GraphQLInputObject<span class="at">)]</span></a>
-<a class="sourceLine" id="cb43-2" title="2"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb43-3" title="3"><span class="kw">struct</span> NewStudent <span class="op">{</span></a>
-<a class="sourceLine" id="cb43-4" title="4">    name: <span class="dt">String</span>,</a>
-<a class="sourceLine" id="cb43-5" title="5">    supervisor: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb43-6" title="6"><span class="op">}</span></a>
-<a class="sourceLine" id="cb43-7" title="7"></a>
-<a class="sourceLine" id="cb43-8" title="8"><span class="at">#[</span>derive<span class="at">(</span>AsChangeset<span class="at">,</span> Identifiable<span class="at">,</span> GraphQLInputObject<span class="at">)]</span></a>
-<a class="sourceLine" id="cb43-9" title="9"><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;studens&quot;</span><span class="at">]</span></a>
-<a class="sourceLine" id="cb43-10" title="10"><span class="kw">struct</span> StudentChangeset <span class="op">{</span></a>
-<a class="sourceLine" id="cb43-11" title="11">    id: <span class="dt">i32</span>,</a>
-<a class="sourceLine" id="cb43-12" title="12">    name: <span class="dt">String</span></a>
-<a class="sourceLine" id="cb43-13" title="13"><span class="op">}</span></a></code></pre></div>
-</section><section id="mutation_object" class="slide level2">
+<div class="sourceCode" id="cb43"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb43-1"><a href="#cb43-1"></a><span class="at">#[</span>derive<span class="at">(</span>Insertable<span class="at">,</span> GraphQLInputObject<span class="at">)]</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;students&quot;</span><span class="at">]</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a><span class="kw">struct</span> NewStudent <span class="op">{</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>    name: <span class="dt">String</span>,</span>
+<span id="cb43-5"><a href="#cb43-5"></a>    supervisor: <span class="dt">i32</span>,</span>
+<span id="cb43-6"><a href="#cb43-6"></a><span class="op">}</span></span>
+<span id="cb43-7"><a href="#cb43-7"></a></span>
+<span id="cb43-8"><a href="#cb43-8"></a><span class="at">#[</span>derive<span class="at">(</span>AsChangeset<span class="at">,</span> Identifiable<span class="at">,</span> GraphQLInputObject<span class="at">)]</span></span>
+<span id="cb43-9"><a href="#cb43-9"></a><span class="at">#[</span>table_name <span class="at">=</span> <span class="st">&quot;studens&quot;</span><span class="at">]</span></span>
+<span id="cb43-10"><a href="#cb43-10"></a><span class="kw">struct</span> StudentChangeset <span class="op">{</span></span>
+<span id="cb43-11"><a href="#cb43-11"></a>    id: <span class="dt">i32</span>,</span>
+<span id="cb43-12"><a href="#cb43-12"></a>    name: <span class="dt">String</span></span>
+<span id="cb43-13"><a href="#cb43-13"></a><span class="op">}</span></span></code></pre></div>
+</section>
+<section id="mutation_object" class="slide level2">
 <h2><code>mutation_object!</code></h2>
-<div class="sourceCode" id="cb44"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb44-1" title="1"><span class="pp">wundergraph::mutation_object!</span> <span class="op">{</span></a>
-<a class="sourceLine" id="cb44-2" title="2">    <span class="co">/// GraphQL description for mutation</span></a>
-<a class="sourceLine" id="cb44-3" title="3">    Mutation <span class="op">{</span></a>
-<a class="sourceLine" id="cb44-4" title="4">        Student(insert = NewStudent, update = StudentChangeset, delete = <span class="cn">true</span>),</a>
-<a class="sourceLine" id="cb44-5" title="5">    <span class="op">}</span></a>
-<a class="sourceLine" id="cb44-6" title="6"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb44-1"><a href="#cb44-1"></a><span class="pp">wundergraph::mutation_object!</span> <span class="op">{</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>    <span class="co">/// GraphQL description for mutation</span></span>
+<span id="cb44-3"><a href="#cb44-3"></a>    Mutation <span class="op">{</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a>        Student(insert = NewStudent, update = StudentChangeset, delete = <span class="cn">true</span>),</span>
+<span id="cb44-5"><a href="#cb44-5"></a>    <span class="op">}</span></span>
+<span id="cb44-6"><a href="#cb44-6"></a><span class="op">}</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Macro similar to <code>query_object!</code></li>
@@ -1478,7 +1557,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Possible to pass a custom struct implementing the corresponding trait to delete instead for custom behaviour (instead of just having the primary keys as argument)</li>
 </ul>
 </aside>
-</section><section id="custom-context" class="slide level2">
+</section>
+<section id="custom-context" class="slide level2">
 <h2>Custom Context</h2>
 <ul>
 <li>Wundergraph requires you to use a type that implements <code>WundergraphContext</code> as juniper context type</li>
@@ -1489,15 +1569,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>WundergraphContext</code> just tells wundergraph how to get a database connection out of given context</li>
 </ul>
 </aside>
-</section><section id="querymodifier" class="slide level2">
+</section>
+<section id="querymodifier" class="slide level2">
 <h2>QueryModifier</h2>
-<div class="sourceCode" id="cb45"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb45-1" title="1"><span class="kw">trait</span> QueryModifier&lt;L, DB&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb45-2" title="2">   <span class="kw">fn</span> modify_query(</a>
-<a class="sourceLine" id="cb45-3" title="3">       &amp;<span class="kw">self</span>,</a>
-<a class="sourceLine" id="cb45-4" title="4">       select: &amp;LookAheadSelection&lt;WundergraphScalarValue&gt;,</a>
-<a class="sourceLine" id="cb45-5" title="5">       query: BoxedQuery&lt;L, DB, <span class="kw">Self</span>&gt;,</a>
-<a class="sourceLine" id="cb45-6" title="6">   ) -&gt; <span class="dt">Result</span>&lt;BoxedQuery&lt;L, DB, <span class="kw">Self</span>&gt;&gt;;</a>
-<a class="sourceLine" id="cb45-7" title="7"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">trait</span> QueryModifier&lt;L, DB&gt; <span class="op">{</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a>   <span class="kw">fn</span> modify_query(</span>
+<span id="cb45-3"><a href="#cb45-3"></a>       &amp;<span class="kw">self</span>,</span>
+<span id="cb45-4"><a href="#cb45-4"></a>       select: &amp;LookAheadSelection&lt;WundergraphScalarValue&gt;,</span>
+<span id="cb45-5"><a href="#cb45-5"></a>       query: BoxedQuery&lt;L, DB, <span class="kw">Self</span>&gt;,</span>
+<span id="cb45-6"><a href="#cb45-6"></a>   ) -&gt; <span class="dt">Result</span>&lt;BoxedQuery&lt;L, DB, <span class="kw">Self</span>&gt;&gt;;</span>
+<span id="cb45-7"><a href="#cb45-7"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>A trait that allows you to get access to the final query before execution</li>
 <li>Implemented for the context type, so you are required to use a custom context type if you want to use this trait</li>
@@ -1505,16 +1586,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <aside class="notes">
 <ul>
-<li>required to have an implementation for all entities</li>
+<li><p>required to have an implementation for all entities</p></li>
 <li><p>Possible to use wild card impl or concrete implementation for each type</p></li>
-<li>Use cases:
+<li><p>Use cases:</p>
 <ul>
 <li>Modify the constructed query by adding additional filters (For example to hide certain database entries based on access rights)</li>
 <li>Completely abort request based on some custom information (Access control)</li>
 </ul></li>
 </ul>
 </aside>
-</section><section id="wundergraph-cli" class="slide level2">
+</section>
+<section id="wundergraph-cli" class="slide level2">
 <h2>Wundergraph CLI</h2>
 <ul>
 <li>Wundergraph CLI is a small CLI helper tool to generate struct definitions from an existing database</li>
@@ -1534,7 +1616,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Everything registered with the <code>query_object!</code>/<code>mutation_object!</code> macro for final usage</li>
 </ul>
 </aside>
-</section><section id="exercise" class="slide level2">
+</section>
+<section id="exercise" class="slide level2">
 <h2>Exercise</h2>
 <ul>
 <li>Implement the REST API from our first exercise now as GraphQL API:
@@ -1551,7 +1634,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </aside>
 </section></section>
-<section><section id="wundergraph-implementation-side" class="title-slide slide level1"><h1>Wundergraph (Implementation side)</h1></section><section id="overview" class="slide level2">
+<section><section id="wundergraph-implementation-side" class="title-slide slide level1"><h1>Wundergraph (Implementation side)</h1></section>
+<section id="overview" class="slide level2">
 <h2>Overview</h2>
 <ul>
 <li>Talk a bit about the implementation of wundergraph</li>
@@ -1561,7 +1645,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <aside class="notes">
 
 </aside>
-</section><section id="technical-challenges-using-diesel" class="slide level2">
+</section>
+<section id="technical-challenges-using-diesel" class="slide level2">
 <h2>Technical challenges using diesel</h2>
 <ul>
 <li>Diesel want’s to know the number of selected columns at compile time
@@ -1581,7 +1666,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Not literally <code>diesel::Associations</code> because of implementation details, but basically the same query</li>
 </ul>
 </aside>
-</section><section id="technical-challenges-using-diesel-1" class="slide level2">
+</section>
+<section id="technical-challenges-using-diesel-1" class="slide level2">
 <h2>Technical challenges using diesel</h2>
 <ul>
 <li>Dynamic query construction in a generic case
@@ -1599,31 +1685,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Currently a fixed scalarvalue type named <code>WundergraphScalarValue</code></li>
 </ul>
 </aside>
-</section><section id="loadinghandler" class="slide level2">
+</section>
+<section id="loadinghandler" class="slide level2">
 <h2>LoadingHandler</h2>
-<div class="sourceCode" id="cb46"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">pub</span> <span class="kw">trait</span> LoadingHandler&lt;DB, Ctx&gt; : HasTable + <span class="bu">Sized</span></a>
-<a class="sourceLine" id="cb46-2" title="2"><span class="kw">where</span> DB: Backend</a>
-<a class="sourceLine" id="cb46-3" title="3"><span class="op">{</span></a>
-<a class="sourceLine" id="cb46-4" title="4">    <span class="kw">type</span> Columns;</a>
-<a class="sourceLine" id="cb46-5" title="5">    <span class="kw">type</span> FieldList;</a>
-<a class="sourceLine" id="cb46-6" title="6">    <span class="kw">type</span> PrimaryKeyIndex;</a>
-<a class="sourceLine" id="cb46-7" title="7">    <span class="kw">type</span> Filter;</a>
-<a class="sourceLine" id="cb46-8" title="8"></a>
-<a class="sourceLine" id="cb46-9" title="9">    <span class="kw">const</span> FIELD_NAMES: &amp;<span class="op">[</span>&amp;<span class="dt">str</span><span class="op">]</span>;</a>
-<a class="sourceLine" id="cb46-10" title="10">    <span class="kw">const</span> TYPE_NAME: &amp;<span class="dt">str</span>;</a>
-<a class="sourceLine" id="cb46-11" title="11"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">pub</span> <span class="kw">trait</span> LoadingHandler&lt;DB, Ctx&gt; : HasTable + <span class="bu">Sized</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="kw">where</span> DB: Backend</span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="op">{</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a>    <span class="kw">type</span> Columns;</span>
+<span id="cb46-5"><a href="#cb46-5"></a>    <span class="kw">type</span> FieldList;</span>
+<span id="cb46-6"><a href="#cb46-6"></a>    <span class="kw">type</span> PrimaryKeyIndex;</span>
+<span id="cb46-7"><a href="#cb46-7"></a>    <span class="kw">type</span> Filter;</span>
+<span id="cb46-8"><a href="#cb46-8"></a></span>
+<span id="cb46-9"><a href="#cb46-9"></a>    <span class="kw">const</span> FIELD_NAMES: &amp;<span class="op">[</span>&amp;<span class="dt">str</span><span class="op">]</span>;</span>
+<span id="cb46-10"><a href="#cb46-10"></a>    <span class="kw">const</span> TYPE_NAME: &amp;<span class="dt">str</span>;</span>
+<span id="cb46-11"><a href="#cb46-11"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li>Central trait for querying GraphQL entities</li>
 </ul>
 <aside class="notes">
 <ul>
 <li><p>One of the traits automatically implemented while deriving <code>WundergraphEntity</code></p></li>
-<li>Generic parameters:
+<li><p>Generic parameters:</p>
 <ul>
 <li><code>DB</code>: Backend type</li>
 <li><code>Ctx</code> Context type</li>
 </ul></li>
-<li>Associated types: -<code>Columns</code>: Tuple of diesel column in the right order
+<li><p>Associated types: -<code>Columns</code>: Tuple of diesel column in the right order</p>
 <ul>
 <li><code>FieldList</code>: Tuple of the struct field types</li>
 <li><code>PrimaryKeyIndex</code>: Type level index into a tuple,
@@ -1634,51 +1721,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><code>Filter</code>: Used filter type. Use <code>()</code> to use no filter</li>
 </ul></li>
-<li>Consts:
+<li><p>Consts:</p>
 <ul>
 <li><code>FIELD_NAMES</code>: List of all field names</li>
 <li><code>TYPE_NAME</code> Name of the type</li>
 </ul></li>
-<li>Useful to implement that manually if the default implementation does not fit</li>
+<li><p>Useful to implement that manually if the default implementation does not fit</p></li>
 </ul>
 </aside>
-</section><section id="wundergraphbelongsto" class="slide level2">
+</section>
+<section id="wundergraphbelongsto" class="slide level2">
 <h2>WundergraphBelongsTo</h2>
-<div class="sourceCode" id="cb47"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb47-1" title="1"><span class="kw">pub</span> <span class="kw">trait</span> WundergraphBelongsTo&lt;Other, DB, Ctx, FK&gt;: LoadingHandler&lt;DB, Ctx&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb47-2" title="2">    <span class="kw">type</span> Key;</a>
-<a class="sourceLine" id="cb47-3" title="3"></a>
-<a class="sourceLine" id="cb47-4" title="4">    <span class="kw">fn</span> resolve(</a>
-<a class="sourceLine" id="cb47-5" title="5">        glob_args: &amp;<span class="op">[</span>LookAheadArgument&lt;WundergraphScalarValue&gt;<span class="op">]</span>,</a>
-<a class="sourceLine" id="cb47-6" title="6">        look_ahead: &amp;<span class="op">[</span>LookAheadSelection&lt;WundergraphScalarValue&gt;<span class="op">]</span>,</a>
-<a class="sourceLine" id="cb47-7" title="7">        selection: <span class="dt">Option</span>&lt;&amp;<span class="op">[</span>Selection&lt;WundergraphScalarValue&gt;<span class="op">]</span>,</a>
-<a class="sourceLine" id="cb47-8" title="8">        keys: &amp;<span class="op">[</span><span class="dt">Option</span>&lt;<span class="kw">Self</span>::Key&gt;<span class="op">]</span>,</a>
-<a class="sourceLine" id="cb47-9" title="9">        executor: Executor&lt;Ctx, WundergraphScalarValue&gt;,</a>
-<a class="sourceLine" id="cb47-10" title="10">    ) -&gt; <span class="dt">Result</span>&lt;</a>
-<a class="sourceLine" id="cb47-11" title="11">        HashMap&lt;</a>
-<a class="sourceLine" id="cb47-12" title="12">            <span class="dt">Option</span>&lt;<span class="kw">Self</span>::Key&gt;,</a>
-<a class="sourceLine" id="cb47-13" title="13">            <span class="dt">Vec</span>&lt;Value&lt;WundergraphScalarValue&gt;&gt;</a>
-<a class="sourceLine" id="cb47-14" title="14">        &gt;&gt;;</a>
-<a class="sourceLine" id="cb47-15" title="15"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb47-1"><a href="#cb47-1"></a><span class="kw">pub</span> <span class="kw">trait</span> WundergraphBelongsTo&lt;Other, DB, Ctx, FK&gt;: LoadingHandler&lt;DB, Ctx&gt; <span class="op">{</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>    <span class="kw">type</span> Key;</span>
+<span id="cb47-3"><a href="#cb47-3"></a></span>
+<span id="cb47-4"><a href="#cb47-4"></a>    <span class="kw">fn</span> resolve(</span>
+<span id="cb47-5"><a href="#cb47-5"></a>        glob_args: &amp;<span class="op">[</span>LookAheadArgument&lt;WundergraphScalarValue&gt;<span class="op">]</span>,</span>
+<span id="cb47-6"><a href="#cb47-6"></a>        look_ahead: &amp;<span class="op">[</span>LookAheadSelection&lt;WundergraphScalarValue&gt;<span class="op">]</span>,</span>
+<span id="cb47-7"><a href="#cb47-7"></a>        selection: <span class="dt">Option</span>&lt;&amp;<span class="op">[</span>Selection&lt;WundergraphScalarValue&gt;<span class="op">]</span>,</span>
+<span id="cb47-8"><a href="#cb47-8"></a>        keys: &amp;<span class="op">[</span><span class="dt">Option</span>&lt;<span class="kw">Self</span>::Key&gt;<span class="op">]</span>,</span>
+<span id="cb47-9"><a href="#cb47-9"></a>        executor: Executor&lt;Ctx, WundergraphScalarValue&gt;,</span>
+<span id="cb47-10"><a href="#cb47-10"></a>    ) -&gt; <span class="dt">Result</span>&lt;</span>
+<span id="cb47-11"><a href="#cb47-11"></a>        HashMap&lt;</span>
+<span id="cb47-12"><a href="#cb47-12"></a>            <span class="dt">Option</span>&lt;<span class="kw">Self</span>::Key&gt;,</span>
+<span id="cb47-13"><a href="#cb47-13"></a>            <span class="dt">Vec</span>&lt;Value&lt;WundergraphScalarValue&gt;&gt;</span>
+<span id="cb47-14"><a href="#cb47-14"></a>        &gt;&gt;;</span>
+<span id="cb47-15"><a href="#cb47-15"></a><span class="op">}</span></span></code></pre></div>
 <aside class="notes">
 <ul>
-<li>Need to be implemented for <code>HasOne</code> field in one of your structs</li>
-<li>Each <code>HasMany</code> field needs a corresponding <code>HasOne</code> field due to this implementation</li>
-<li>Just construct and execute the query, leave the construction of the result to <code>build_response</code></li>
+<li><p>Need to be implemented for <code>HasOne</code> field in one of your structs</p></li>
+<li><p>Each <code>HasMany</code> field needs a corresponding <code>HasOne</code> field due to this implementation</p></li>
+<li><p>Just construct and execute the query, leave the construction of the result to <code>build_response</code></p></li>
 <li><p>Required to be a backend specific implementation because otherwise rustc will yell at us about cyclic trait bounds</p></li>
-<li>Also implemented by deriving <code>WundergraphEntity</code></li>
-<li>Otherwise there exists a distinct derive</li>
+<li><p>Also implemented by deriving <code>WundergraphEntity</code></p></li>
+<li><p>Otherwise there exists a distinct derive</p></li>
 </ul>
 </aside>
-</section><section id="filter-infrastructure" class="slide level2">
+</section>
+<section id="filter-infrastructure" class="slide level2">
 <h2>Filter infrastructure</h2>
 <ul>
 <li>Automatically generated for structs implementing <code>LoadingHandler</code></li>
 <li>Composable out simple filters for each type</li>
 </ul>
-<div class="sourceCode" id="cb48"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">trait</span> FilterValue&lt;C&gt; <span class="op">{</span></a>
-<a class="sourceLine" id="cb48-2" title="2">    <span class="kw">type</span> RawValue;</a>
-<a class="sourceLine" id="cb48-3" title="3">    <span class="kw">type</span> AdditionalFilter;</a>
-<a class="sourceLine" id="cb48-4" title="4"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb48-1"><a href="#cb48-1"></a><span class="kw">trait</span> FilterValue&lt;C&gt; <span class="op">{</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>    <span class="kw">type</span> RawValue;</span>
+<span id="cb48-3"><a href="#cb48-3"></a>    <span class="kw">type</span> AdditionalFilter;</span>
+<span id="cb48-4"><a href="#cb48-4"></a><span class="op">}</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>implemented for concrete rust type</li>
@@ -1694,7 +1783,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </aside>
-</section><section id="tuple-mappers" class="slide level2">
+</section>
+<section id="tuple-mappers" class="slide level2">
 <h2>Tuple mappers</h2>
 <ul>
 <li>Internally most of the things in wundergraph operate on tuples at a type level to generate things</li>
@@ -1710,31 +1800,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Both done at compile time</li>
 </ul>
 </aside>
-</section><section id="tuple-mappers-1" class="slide level2">
+</section>
+<section id="tuple-mappers-1" class="slide level2">
 <h2>Tuple mappers</h2>
-<div class="sourceCode" id="cb49"><pre class="sourceCode rust"><code class="sourceCode rust"><a class="sourceLine" id="cb49-1" title="1"><span class="kw">trait</span> ExtractTableFields <span class="op">{</span></a>
-<a class="sourceLine" id="cb49-2" title="2">    <span class="kw">type</span> Out;</a>
-<a class="sourceLine" id="cb49-3" title="3"><span class="op">}</span></a>
-<a class="sourceLine" id="cb49-4" title="4"></a>
-<a class="sourceLine" id="cb49-5" title="5"><span class="kw">impl</span>&lt;T1, T2&gt; ExtractTableFields <span class="kw">for</span> (T1, T2)</a>
-<a class="sourceLine" id="cb49-6" title="6"><span class="kw">where</span> T1: WundergraphValue, (T2,): ExtractTableFields</a>
-<a class="sourceLine" id="cb49-7" title="7">     &lt;(T2,) <span class="kw">as</span> ExtractTableFields&gt;::Out: AppendToTuple&lt;T1&gt;</a>
-<a class="sourceLine" id="cb49-8" title="8"><span class="op">{</span></a>
-<a class="sourceLine" id="cb49-9" title="9">    <span class="kw">type</span> Out = &lt;&lt;(T2,) <span class="kw">as</span> ExtractTableFields&gt;::Out</a>
-<a class="sourceLine" id="cb49-10" title="10">        <span class="kw">as</span> AppendToTuple&lt;T1&gt;&gt;::Out;</a>
-<a class="sourceLine" id="cb49-11" title="11"><span class="op">}</span></a>
-<a class="sourceLine" id="cb49-12" title="12"></a>
-<a class="sourceLine" id="cb49-13" title="13"><span class="kw">impl</span>&lt;C, FK, T2&gt; ExtractTableFields <span class="kw">for</span> (HasMany&lt;C, FK&gt;, T2)</a>
-<a class="sourceLine" id="cb49-14" title="14"><span class="kw">where</span> (T2,): ExtractTableFields</a>
-<a class="sourceLine" id="cb49-15" title="15"><span class="op">{</span></a>
-<a class="sourceLine" id="cb49-16" title="16">    <span class="kw">type</span> Out = &lt;(T2,) <span class="kw">as</span> ExtractTableFields&gt;::Out;</a>
-<a class="sourceLine" id="cb49-17" title="17"><span class="op">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode rust"><code class="sourceCode rust"><span id="cb49-1"><a href="#cb49-1"></a><span class="kw">trait</span> ExtractTableFields <span class="op">{</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>    <span class="kw">type</span> Out;</span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="op">}</span></span>
+<span id="cb49-4"><a href="#cb49-4"></a></span>
+<span id="cb49-5"><a href="#cb49-5"></a><span class="kw">impl</span>&lt;T1, T2&gt; ExtractTableFields <span class="kw">for</span> (T1, T2)</span>
+<span id="cb49-6"><a href="#cb49-6"></a><span class="kw">where</span> T1: WundergraphValue, (T2,): ExtractTableFields</span>
+<span id="cb49-7"><a href="#cb49-7"></a>     &lt;(T2,) <span class="kw">as</span> ExtractTableFields&gt;::Out: AppendToTuple&lt;T1&gt;</span>
+<span id="cb49-8"><a href="#cb49-8"></a><span class="op">{</span></span>
+<span id="cb49-9"><a href="#cb49-9"></a>    <span class="kw">type</span> Out = &lt;&lt;(T2,) <span class="kw">as</span> ExtractTableFields&gt;::Out</span>
+<span id="cb49-10"><a href="#cb49-10"></a>        <span class="kw">as</span> AppendToTuple&lt;T1&gt;&gt;::Out;</span>
+<span id="cb49-11"><a href="#cb49-11"></a><span class="op">}</span></span>
+<span id="cb49-12"><a href="#cb49-12"></a></span>
+<span id="cb49-13"><a href="#cb49-13"></a><span class="kw">impl</span>&lt;C, FK, T2&gt; ExtractTableFields <span class="kw">for</span> (HasMany&lt;C, FK&gt;, T2)</span>
+<span id="cb49-14"><a href="#cb49-14"></a><span class="kw">where</span> (T2,): ExtractTableFields</span>
+<span id="cb49-15"><a href="#cb49-15"></a><span class="op">{</span></span>
+<span id="cb49-16"><a href="#cb49-16"></a>    <span class="kw">type</span> Out = &lt;(T2,) <span class="kw">as</span> ExtractTableFields&gt;::Out;</span>
+<span id="cb49-17"><a href="#cb49-17"></a><span class="op">}</span></span></code></pre></div>
 <aside class="notes">
 <ul>
 <li>Provide such implementations for each (supported) tuple size</li>
 </ul>
 </aside>
-</section><section id="final-exercise" class="slide level2">
+</section>
+<section id="final-exercise" class="slide level2">
 <h2>Final exercise</h2>
 <ul>
 <li>We want to store different versions of the same post.
@@ -1766,8 +1858,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 
-  <script src="https://revealjs.com/lib/js/head.min.js"></script>
-  <script src="https://revealjs.com/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2//js/reveal.js"></script>
 
   <script>
 
@@ -1779,9 +1870,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
+          { src: 'https://unpkg.com/reveal.js@3.9.2//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/notes/notes.js', async: true }
         ]
       });
     </script>
